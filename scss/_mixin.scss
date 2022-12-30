@@ -1,0 +1,223 @@
+@mixin font-heading-1 {
+  font-family: "Optima", "Inter", sans-serif;
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 83px;
+  letter-spacing: 0;
+  @media (min-width: $md) {
+    font-size: 56px;
+    line-height: 48px;
+  }
+}
+
+@mixin font-heading-2 {
+  font-family: "Optima", "Inter", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: 0;
+  @media (min-width: $md) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+@mixin font-heading-3 {
+  font-family: "Optima", "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 31px;
+  letter-spacing: 0;
+  @media (min-width: $md) {
+    font-size: 15px;
+    line-height: 20px;
+  }
+}
+
+@mixin font-heading-4 {
+  font-family: "Optima", "Inter", sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  letter-spacing: 0;
+  @media (min-width: $md) {
+    font-size: 22px;
+    line-height: 29px;
+  }
+}
+
+@mixin font-body-1 {
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0;
+}
+
+@mixin font-body-2 {
+  font-family: "Optima", "Inter", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+}
+
+@mixin font-minium {
+  font-family: "Optima", "Inter", sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0;
+}
+
+@mixin font-button {
+  font-family: "Optima", "Inter", sans-serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: -0.002em;
+  @media (min-width: $md) {
+    font-size: 16px;
+    line-height: 21px;
+  }
+}
+
+@mixin font-display-1 {
+  font-family: "Optima", "Inter", sans-serif;
+  font-size: 120px;
+  font-weight: 400;
+  line-height: 156px;
+  letter-spacing: 0;
+  @media (min-width: $md) {
+    font-size: 80px;
+    line-height: 80px;
+  }
+}
+
+@mixin font-display-2 {
+  font-family: "Optima", "Inter", sans-serif;
+  font-size: 112px;
+  font-weight: 400;
+  line-height: 146px;
+  letter-spacing: 0;
+  @media (min-width: $md) {
+    font-size: 72px;
+    line-height: 72px;
+  }
+}
+
+@mixin flex($fd: row, $jc: center, $ai: center) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}
+
+@mixin poa($l: 0, $t: 0, $r: 0, $b: 0) {
+  position: absolute;
+  margin: auto;
+
+  @if $l !=l {
+    left: $l;
+  } @else {
+    left: auto;
+  }
+
+  @if $t !=t {
+    top: $t;
+  } @else {
+    top: auto;
+  }
+
+  @if $r !=r {
+    right: $r;
+  } @else {
+    right: auto;
+  }
+
+  @if $b !=b {
+    bottom: $b;
+  } @else {
+    bottom: auto;
+  }
+}
+
+@mixin fixed($l: 0, $t: 0, $r: 0, $b: 0) {
+  position: fixed;
+  margin: auto;
+
+  @if $l !=l {
+    left: $l;
+  } @else {
+    left: auto;
+  }
+
+  @if $t !=t {
+    top: $t;
+  } @else {
+    top: auto;
+  }
+
+  @if $r !=r {
+    right: $r;
+  } @else {
+    right: auto;
+  }
+
+  @if $b !=b {
+    bottom: $b;
+  } @else {
+    bottom: auto;
+  }
+}
+
+@mixin rect($w: 100%, $h: 100%, $bdrs: 0) {
+  width: $w;
+  height: $h;
+  border-radius: $bdrs;
+}
+
+@mixin circle($r) {
+  width: $r;
+  height: $r;
+  border-radius: 50%;
+}
+
+@mixin border($bc: $c-border, $bw: 1px, $bs: solid) {
+  border-color: $bc;
+  border-width: $bw;
+  border-style: $bs;
+}
+
+@mixin beaf($c: "") {
+  content: $c;
+  display: block;
+}
+
+@mixin bg($bgsz: contain, $bgr: no-repeat, $bgposh: center, $bgposs: center) {
+  background-size: $bgsz;
+  background-repeat: $bgr;
+  background-position: $bgposh $bgposs;
+}
+
+@mixin img($w: auto, $h: auto) {
+  @include rect($w, $h);
+  @include flex;
+
+  @if $w==auto {
+    picture,
+    img {
+      @include rect(auto, 100%);
+    }
+  } @else if $h==auto {
+    picture,
+    img {
+      @include rect(100%, auto);
+    }
+  } @else {
+    picture,
+    img {
+      @include rect(100%, 100%);
+    }
+  }
+}

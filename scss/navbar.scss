@@ -1,0 +1,51 @@
+.navbar {
+  padding: 32px 48px;
+  @include flex(row, space-between);
+  &__brand {
+    @include flex(row, flex-start, flex-start);
+    .brand {
+      &__original {
+        @include rect(auto, 32px);
+      }
+      &__registered {
+        @include rect(auto, 12px);
+        margin-left: 7px;
+      }
+    }
+    svg path {
+      fill: #205288;
+    }
+  }
+  &__nav {
+    @include flex(row, flex-end);
+    @include font-body-2;
+    color: $c-black;
+    text-transform: capitalize;
+    padding: 17px 40px;
+    border-radius: 9999px;
+    background: $c-primary4;
+    .nav {
+      &__item {
+        & + .nav__item {
+          margin-left: 40px;
+        }
+        & + .nav__dash {
+          margin-left: 15px;
+          margin-right: 20px;
+        }
+      }
+      &__link {
+        @include flex;
+        svg {
+          @include rect(auto, 15px);
+          margin-right: 7px;
+        }
+      }
+      &__line {
+        @include rect(24px, 0);
+        border: 1px solid $c-primary1;
+        transform: matrix(-0.34, 0.94, 0.94, 0.34, 0, 0);
+      }
+    }
+  }
+}

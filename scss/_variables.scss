@@ -1,0 +1,36 @@
+$xs: 360px;
+$sm: 768px;
+$md: 1024px;
+$lg: 1280px;
+$xl: 1440px;
+$xxl: 1920px;
+// @media (min-width: $md)
+
+$c-primary0: #d68f4c;
+$c-primary1: #dfad77;
+$c-primary1-op01: rgba(#dfad77, 0.1);
+$c-primary2: #dbbb76;
+$c-primary3: #f2eee6;
+$c-primary4: #f0ede8;
+
+$c-black: #131313;
+$c-black-op03: rgba(#131313, 0.3);
+$c-black-op01: rgba(#131313, 0.1);
+$c-gray1: #505050;
+$c-gray2: #f2f2f2;
+$c-white: #ffffff;
+$c-white-op03: rgba(#ffffff, 0.3);
+
+// paragraph
+@font-face {
+  font-family: "Optima";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Optima"), url("./fonts/OptimaLTPro-Medium.otf") format("opentype");
+}
+@font-face {
+  font-family: "Optima";
+  font-style: normal;
+  font-weight: bold;
+  src: local("Optima"), url("./fonts/OptimaLTPro-bold.otf") format("opentype");
+}
