@@ -15,8 +15,8 @@
     opacity: 1; }
   75%,
   100% {
-    width: 180%;
-    height: 180%;
+    width: calc(100% + 3.2rem);
+    height: calc(100% + 3.2rem);
     opacity: 0; } }
 html,
 body {
@@ -388,6 +388,10 @@ html header {
     letter-spacing: 0;
     color: #ffffff;
     text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
     transform-origin: left top;
     transform: translateY(-0.8rem) rotate(90deg);
     position: absolute;
@@ -395,11 +399,7 @@ html header {
     left: -4.67rem;
     top: 0;
     right: auto;
-    bottom: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center; }
+    bottom: auto; }
     @media (max-width: 1024px) {
       .concept__tag {
         font-size: 1rem; } }
@@ -409,7 +409,7 @@ html header {
       width: 1.6rem;
       height: 0;
       border-radius: 0;
-      border: 0.07rem solid #ffffff;
+      border-top: 0.07rem solid #ffffff;
       transform: translate(-0.27rem, -0.2rem) rotate(110deg); }
   .concept__title {
     font-family: "Optima", "Inter", sans-serif;
@@ -476,10 +476,12 @@ html header {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center; }
-    .concept__btn:hover .btn__icon::before {
-      animation: ripple 0.8s cubic-bezier(0.5, 1, 0.89, 1); }
-    .concept__btn:hover .btn__icon::after {
-      animation: ripple 0.8s 0.4s cubic-bezier(0.5, 1, 0.89, 1); }
+    .concept__btn:hover .btn__icon {
+      transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
+      .concept__btn:hover .btn__icon::before {
+        animation: ripple 1s cubic-bezier(0.5, 1, 0.89, 1); }
+      .concept__btn:hover .btn__icon::after {
+        animation: ripple 1s 0.5s cubic-bezier(0.5, 1, 0.89, 1); }
     .concept__btn:hover .btn__image::before {
       opacity: 0;
       transform: translate(25%, -25%) rotate(-12deg); }
@@ -582,5 +584,314 @@ html header {
       color: #ffffff; }
     .concept__btn .btn__text::after {
       color: #ffffff; }
+
+.collection {
+  margin: 29.2rem 8rem 0rem 8rem; }
+  .collection__title {
+    font-family: "Optima", "Inter", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: 0;
+    color: #505050;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; }
+    @media (max-width: 1024px) {
+      .collection__title {
+        font-size: 1rem; } }
+    .collection__title::before {
+      content: "";
+      display: block;
+      width: 1.6rem;
+      height: 0;
+      border-radius: 0;
+      border-top: 0.07rem solid #505050;
+      transform: translate(-0.27rem, -0.2rem) rotate(110deg); }
+  .collection__gallery {
+    margin: auto;
+    margin-top: -2.08rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; }
+    .collection__gallery .gallery__item + .gallery__item {
+      margin-left: 1.6rem; }
+    .collection__gallery .gallery__item:nth-child(1) {
+      width: 18.8rem;
+      height: 24.27rem;
+      border-radius: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .collection__gallery .gallery__item:nth-child(1) picture,
+      .collection__gallery .gallery__item:nth-child(1) img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0; }
+    .collection__gallery .gallery__item:nth-child(2) {
+      width: 32.4rem;
+      height: 43.67rem;
+      border-radius: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .collection__gallery .gallery__item:nth-child(2) picture,
+      .collection__gallery .gallery__item:nth-child(2) img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0; }
+    .collection__gallery .gallery__item:nth-child(3) {
+      width: 25.6rem;
+      height: 19.73rem;
+      border-radius: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      margin: auto;
+      left: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      transform: translateY(calc(-100% - 1.6rem)); }
+      .collection__gallery .gallery__item:nth-child(3) picture,
+      .collection__gallery .gallery__item:nth-child(3) img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0; }
+    .collection__gallery .gallery__item:nth-child(4) {
+      width: 18.8rem;
+      height: 20.07rem;
+      border-radius: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center; }
+      .collection__gallery .gallery__item:nth-child(4) picture,
+      .collection__gallery .gallery__item:nth-child(4) img {
+        width: 100%;
+        height: 100%;
+        border-radius: 0; }
+    .collection__gallery .gallery__link {
+      width: 12rem;
+      height: 3.47rem;
+      border-radius: 9999px;
+      background: #f0ede8;
+      z-index: 1;
+      position: absolute;
+      margin: auto;
+      left: 0;
+      top: auto;
+      right: 0;
+      bottom: 1.6rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+      box-shadow: 0 0.27rem 2.13rem -0.53rem rgba(172, 172, 172, 0.2); }
+      .collection__gallery .gallery__link::before, .collection__gallery .gallery__link::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 9999px;
+        position: absolute;
+        margin: auto;
+        left: 50%;
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        opacity: 0; }
+      .collection__gallery .gallery__link .btn__text {
+        width: auto;
+        height: 1.3rem;
+        border-radius: 0;
+        color: transparent;
+        overflow: hidden; }
+        .collection__gallery .gallery__link .btn__text::before, .collection__gallery .gallery__link .btn__text::after {
+          content: attr(data-text);
+          display: block;
+          position: absolute;
+          margin: auto;
+          left: auto;
+          top: 0;
+          right: 0;
+          bottom: 0; }
+        .collection__gallery .gallery__link .btn__text::before {
+          transform: translateY(0%) rotate(0deg);
+          transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
+        .collection__gallery .gallery__link .btn__text::after {
+          transform: translateY(150%) rotate(12deg);
+          transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
+      .collection__gallery .gallery__link:hover::before {
+        animation: ripple 1s cubic-bezier(0.5, 1, 0.89, 1); }
+      .collection__gallery .gallery__link:hover::after {
+        animation: ripple 1s 0.5s cubic-bezier(0.5, 1, 0.89, 1); }
+      .collection__gallery .gallery__link:hover .btn__text::before {
+        transform: translateY(-150%) rotate(-12deg); }
+      .collection__gallery .gallery__link:hover .btn__text::after {
+        transform: translateY(0) rotate(0deg); }
+      .collection__gallery .gallery__link::before {
+        border: 0.07rem solid #f0ede8; }
+      .collection__gallery .gallery__link::after {
+        border: 0.07rem solid #dbbb76; }
+      .collection__gallery .gallery__link:hover {
+        background: #dbbb76; }
+    .collection__gallery .gallery__linkText {
+      font-family: "Optima", "Inter", sans-serif;
+      font-size: 1rem;
+      font-weight: 400;
+      line-height: 1.3;
+      letter-spacing: 0; }
+      .collection__gallery .gallery__linkText::before {
+        color: #505050; }
+      .collection__gallery .gallery__linkText::after {
+        color: #ffffff; }
+  .collection__btnGroup {
+    width: 100%;
+    height: auto;
+    border-radius: 0;
+    margin-top: 0.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    font-family: "Optima", "Inter", sans-serif;
+    font-size: 1.33rem;
+    font-weight: 400;
+    line-height: 1.3;
+    letter-spacing: -0.002rem;
+    color: #505050; }
+    @media (max-width: 1024px) {
+      .collection__btnGroup {
+        font-size: 1.07rem; } }
+  .collection__btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center; }
+    .collection__btn:hover .btn__icon {
+      transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
+      .collection__btn:hover .btn__icon::before {
+        animation: ripple 1s cubic-bezier(0.5, 1, 0.89, 1); }
+      .collection__btn:hover .btn__icon::after {
+        animation: ripple 1s 0.5s cubic-bezier(0.5, 1, 0.89, 1); }
+    .collection__btn:hover .btn__image::before {
+      opacity: 0;
+      transform: translate(25%, -25%) rotate(-12deg); }
+    .collection__btn:hover .btn__image::after {
+      opacity: 1;
+      transform: translateY(0) rotate(0deg); }
+    .collection__btn:hover .btn__text::before {
+      transform: translateY(-150%) rotate(-12deg); }
+    .collection__btn:hover .btn__text::after {
+      transform: translateY(0) rotate(0deg); }
+    .collection__btn .btn__icon {
+      width: 4.27vw;
+      height: 4.27vw;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      background: rgba(255, 255, 255, 0);
+      transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
+      .collection__btn .btn__icon::before, .collection__btn .btn__icon::after {
+        content: "";
+        display: block;
+        width: 4.27vw;
+        height: 4.27vw;
+        border-radius: 50%;
+        position: absolute;
+        margin: auto;
+        left: 50%;
+        top: 50%;
+        right: auto;
+        bottom: auto;
+        transform: translate(-50%, -50%);
+        opacity: 0; }
+    .collection__btn .btn__image {
+      width: 1.2rem;
+      height: 0.6rem;
+      border-radius: 0; }
+      .collection__btn .btn__image::before, .collection__btn .btn__image::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        position: absolute;
+        margin: auto;
+        left: auto;
+        top: 0;
+        right: 0;
+        bottom: auto;
+        -webkit-mask: url("../images/arrow.svg");
+        mask: url("../images/arrow.svg");
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center center; }
+      .collection__btn .btn__image::before {
+        opacity: 1;
+        transform: translateY(0%) rotate(0deg);
+        transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
+      .collection__btn .btn__image::after {
+        opacity: 0;
+        transform: translate(-25%, 25%) rotate(12deg);
+        transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
+    .collection__btn .btn__text {
+      margin-left: 1.6rem;
+      width: auto;
+      height: 1.73rem;
+      border-radius: 0;
+      color: transparent;
+      overflow: hidden; }
+      .collection__btn .btn__text::before, .collection__btn .btn__text::after {
+        content: attr(data-text);
+        display: block;
+        position: absolute;
+        margin: auto;
+        left: auto;
+        top: 0;
+        right: 0;
+        bottom: 0; }
+      .collection__btn .btn__text::before {
+        transform: translateY(0%) rotate(0deg);
+        transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
+      .collection__btn .btn__text::after {
+        transform: translateY(150%) rotate(12deg);
+        transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
+    .collection__btn:hover .btn__icon {
+      border: 0.07rem solid transparent;
+      background: #dbbb76; }
+    .collection__btn .btn__icon {
+      border: 0.07rem solid rgba(19, 19, 19, 0.3); }
+      .collection__btn .btn__icon::before {
+        border: 0.07rem solid rgba(19, 19, 19, 0.3); }
+      .collection__btn .btn__icon::after {
+        border: 0.07rem solid #dbbb76; }
+    .collection__btn .btn__image::before {
+      background: #505050; }
+    .collection__btn .btn__image::after {
+      background: #ffffff; }
+    .collection__btn .btn__text::before {
+      color: #505050; }
+    .collection__btn .btn__text::after {
+      color: #dbbb76; }
 
 /*# sourceMappingURL=styles.css.map */

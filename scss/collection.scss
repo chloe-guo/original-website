@@ -1,0 +1,104 @@
+.collection {
+  margin: 29.2rem 8rem 0rem 8rem;
+  &__title {
+    @include section-title;
+  }
+  &__gallery {
+    margin: auto;
+    margin-top: -2.08rem;
+    @include flex(row, flex-start);
+    .gallery {
+      &__item {
+        & + .gallery__item {
+          margin-left: 1.6rem;
+        }
+        &:nth-child(1) {
+          @include img(18.8rem, 24.27rem);
+        }
+        &:nth-child(2) {
+          @include img(32.4rem, 43.67rem);
+        }
+        &:nth-child(3) {
+          @include img(25.6rem, 19.73rem);
+          @include poa(l, 0, 0, 0);
+          transform: translateY(calc(-100% - 1.6rem));
+        }
+        &:nth-child(4) {
+          @include img(18.8rem, 20.07rem);
+        }
+      }
+      &__link {
+        @include rect(12rem, 3.47rem, 9999px);
+        background: $c-primary4;
+        z-index: 1;
+        @include poa(0, t, 0, 1.6rem);
+        @include ani-text-btn(1.3rem);
+        box-shadow: 0 0.27rem 2.13rem -0.53rem $c-shadow;
+        &::before {
+          border: 0.07rem solid $c-primary4;
+        }
+        &::after {
+          border: 0.07rem solid $c-primary2;
+        }
+        &:hover {
+          background: $c-primary2;
+        }
+      }
+      &__linkText {
+        @include font-body-2;
+        &::before {
+          color: $c-gray1;
+        }
+        &::after {
+          color: $c-white;
+        }
+      }
+    }
+  }
+  &__btnGroup {
+    @include rect(100%, auto);
+    margin-top: 0.4rem;
+    @include flex(column, flex-start, flex-end);
+    @include font-button;
+    color: $c-gray1;
+  }
+  &__btn {
+    @include flex(row, flex-start, center);
+    @include ani-icon-btn;
+    &:hover {
+      .btn {
+        &__icon {
+          border: 0.07rem solid transparent;
+          background: $c-primary2;
+        }
+      }
+    }
+    .btn {
+      &__icon {
+        border: 0.07rem solid $c-black-op03;
+        &::before {
+          border: 0.07rem solid $c-black-op03;
+        }
+        &::after {
+          border: 0.07rem solid $c-primary2;
+        }
+      }
+      &__image {
+        &::before {
+          background: $c-gray1;
+        }
+        &::after {
+          background: $c-white;
+        }
+      }
+      &__text {
+        &::before {
+          color: $c-gray1;
+        }
+        &::after {
+          color: $c-primary2;
+        }
+      }
+    }
+  }
+}

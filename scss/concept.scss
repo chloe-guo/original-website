@@ -73,19 +73,10 @@
     margin-top: 19.73rem;
   }
   &__tag {
-    @include font-heading-3;
-    color: $c-white;
-    text-transform: uppercase;
+    @include section-title($c-white);
     transform-origin: left top;
     transform: translateY(-0.8rem) rotate(90deg);
     @include poa(-4.67rem, 0, r, b);
-    @include flex;
-    &::before {
-      @include beaf;
-      @include rect(1.6rem, 0);
-      border: 0.07rem solid $c-white;
-      transform: translate(-0.27rem, -0.2rem) rotate(110deg);
-    }
   }
   &__title {
     @include font-heading-1;
@@ -109,7 +100,7 @@
   }
   &__btn {
     @include flex(row, flex-start, center);
-    @include btn;
+    @include ani-icon-btn;
     &:hover {
       .btn {
         &__icon {

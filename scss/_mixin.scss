@@ -263,16 +263,65 @@
   }
 }
 
-@mixin btn {
+@mixin ani-text-btn($h) {
+  @include flex;
+  transition: all 0.6s $ease-outCubic;
+  &::before,
+  &::after {
+    @include beaf;
+    @include rect(100%, 100%, 9999px);
+    @include poa(50%, 50%, r, b);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+  .btn__text {
+    @include rect(auto, $h);
+    color: transparent;
+    overflow: hidden;
+    &::before,
+    &::after {
+      @include beaf(attr(data-text));
+      @include poa(l, 0, 0, 0);
+    }
+    &::before {
+      transform: translateY(0%) rotate(0deg);
+      transition: all 0.6s $ease-outCubic;
+    }
+    &::after {
+      transform: translateY(150%) rotate(12deg);
+      transition: all 0.6s $ease-outCubic;
+    }
+  }
+
+  &:hover {
+    &::before {
+      animation: ripple 1s $ease-outQuad;
+    }
+    &::after {
+      animation: ripple 1s 0.5s $ease-outQuad;
+    }
+    .btn__text {
+      &::before {
+        transform: translateY(-150%) rotate(-12deg);
+      }
+      &::after {
+        transform: translateY(0) rotate(0deg);
+      }
+    }
+  }
+}
+
+@mixin ani-icon-btn {
   @include flex(row, flex-start, center);
   &:hover {
     .btn {
       &__icon {
+        transition: all 0.6s $ease-outCubic;
         &::before {
-          animation: ripple 0.8s $ease-outQuad;
+          animation: ripple 1s $ease-outQuad;
         }
         &::after {
-          animation: ripple 0.8s 0.4s $ease-outQuad;
+          animation: ripple 1s 0.5s $ease-outQuad;
         }
       }
       &__image {
@@ -362,8 +411,21 @@
   }
   75%,
   100% {
-    width: 180%;
-    height: 180%;
+    width: calc(100% + 3.2rem);
+    height: calc(100% + 3.2rem);
     opacity: 0;
+  }
+}
+
+@mixin section-title($c: $c-gray1) {
+  @include font-heading-3;
+  color: $c;
+  text-transform: uppercase;
+  @include flex(row, flex-start);
+  &::before {
+    @include beaf;
+    @include rect(1.6rem, 0);
+    border-top: 0.07rem solid $c;
+    transform: translate(-0.27rem, -0.2rem) rotate(110deg);
   }
 }
