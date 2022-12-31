@@ -1,0 +1,81 @@
+.concept {
+  background: $c-primary1;
+  padding-top: calc(178px - 120px);
+  @include flex(row, space-between);
+  &__topImage {
+    @include img(420px, auto);
+    @include poa(l, 0, 0, b);
+  }
+  &__swiper {
+    flex: 0 0 708px;
+    @include img(708px, 967px);
+    transform: translateY(120px);
+    margin: 0;
+    .slide {
+      &__image {
+        transform: scale(1.1);
+        filter: blur(6px);
+        transition: filter 0.6s $ease-outQuad, transform 0.6s 0.3s $ease-outQuad;
+      }
+      &__text {
+        @include font-display-1;
+        color: transparent;
+        text-transform: capitalize;
+        mix-blend-mode: overlay;
+        @include poa(72px, t, 72px, 34px);
+        @include flex(column, flex-start, flex-start);
+        span {
+          @include rect(100%, 146px);
+          overflow: hidden;
+          @media (max-width: $md) {
+            @include rect(100%, 72px);
+          }
+          &::before {
+            @include beaf(attr(data-text));
+            color: $c-primary1;
+            @include poa(0, 0, r, b);
+            transform: translateY(150%) rotate(12deg);
+          }
+          @for $i from 1 through 3 {
+            &:nth-child(#{$i}) {
+              &::before {
+                transition: all 0.6s ($i - 1 + 12) * 0.05s $ease-outCubic;
+              }
+            }
+          }
+        }
+      }
+    }
+    .swiper-slide {
+      &-active {
+        .slide {
+          &__image {
+            transform: scale(1);
+            filter: blur(0px);
+          }
+          &__text {
+            span {
+              &::before {
+                transform: translateY(0%) rotate(0deg);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &__title {
+    @include font-heading-1;
+    color: $c-white;
+    text-transform: capitalize;
+    @include rect(486px, auto);
+    @include flex(column, flex-start, flex-start);
+    margin-right: 120px;
+  }
+  &__content {
+    @include font-body-1;
+    color: $c-white;
+    @include rect(282px, auto);
+    margin-top: 79px;
+  }
+}

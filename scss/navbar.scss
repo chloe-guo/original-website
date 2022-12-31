@@ -8,7 +8,7 @@
       .brand__original,
       .brand__registered {
         &::before {
-          transform: translateY(-120%) rotate(-6deg);
+          transform: translateY(-120%) rotate(-12deg);
         }
         &::after {
           transform: translateY(0);
@@ -27,13 +27,13 @@
         }
         &::before {
           background: #205288;
-          transform: translateY(0%);
-          transition: all 0.6s $ease-out;
+          transform: translateY(0%) rotate(0deg);
+          transition: all 0.6s $ease-outCubic;
         }
         &::after {
           background: $c-primary0;
-          transform: translateY(120%) rotate(6deg);
-          transition: all 0.6s $ease-out;
+          transform: translateY(120%) rotate(12deg);
+          transition: all 0.6s $ease-outCubic;
         }
       }
       &__original {
@@ -63,7 +63,7 @@
   &__nav {
     @include flex(row, flex-end);
     text-transform: capitalize;
-    padding: 17px 40px;
+    padding: 20px 40px 14px 40px;
     border-radius: 9999px;
     background: $c-primary4;
     .nav {
@@ -89,7 +89,7 @@
         &:hover {
           .nav__icon {
             &::before {
-              transform: translateY(-120%) rotate(-6deg);
+              transform: translateY(-150%) rotate(-12deg);
             }
             &::after {
               transform: translateY(0);
@@ -98,33 +98,33 @@
         }
       }
       &__icon {
-        @include rect(12px, 15px);
+        @include rect(12px, 20px);
         margin-right: 7px;
         overflow: hidden;
         &::before,
         &::after {
           @include beaf;
-          @include rect;
-          @include poa(l, 0, 0, 0);
+          @include rect(100%, 15px);
+          @include poa(l, 0, 0, b);
           -webkit-mask: url("../images/shop.svg");
           mask: url("../images/shop.svg");
           @include mask;
         }
         &::before {
           background: $c-black;
-          transform: translateY(0%);
-          transition: all 0.6s $ease-out;
+          transform: translateY(0%) rotate(0deg);
+          transition: all 0.6s $ease-outCubic;
         }
         &::after {
           background: $c-primary0;
-          transform: translateY(120%) rotate(6deg);
-          transition: all 0.6s $ease-out;
+          transform: translateY(150%) rotate(12deg);
+          transition: all 0.6s $ease-outCubic;
         }
       }
       &__line {
         @include rect(24px, 0);
         border: 1px solid $c-primary1;
-        transform: matrix(-0.34, 0.94, 0.94, 0.34, 0, 0);
+        transform: translateY(-3px) matrix(-0.34, 0.94, 0.94, 0.34, 0, 0);
       }
     }
   }

@@ -4,7 +4,7 @@ $md: 1024px;
 $lg: 1280px;
 $xl: 1440px;
 $xxl: 1920px;
-// @media (min-width: $md)
+// @media (max-width: $md)
 
 $c-primary0: #d68f4c;
 $c-primary1: #dfad77;
@@ -25,13 +25,15 @@ $c-white-op03: rgba(#ffffff, 0.3);
   font-family: "Optima";
   font-style: normal;
   font-weight: 400;
-  src: local("Optima"), url("./fonts/OptimaLTPro-Medium.otf") format("opentype");
+  src: local("Optima"),
+    url("../fonts/OptimaLTPro-Medium.otf") format("opentype");
 }
 @font-face {
   font-family: "Optima";
   font-style: normal;
   font-weight: bold;
-  src: local("Optima"), url("./fonts/OptimaLTPro-bold.otf") format("opentype");
+  src: local("Optima"), url("../fonts/OptimaLTPro-bold.otf") format("opentype");
 }
 
-$ease-out: cubic-bezier(0.33, 1, 0.68, 1);
+$ease-outCubic: cubic-bezier(0.33, 1, 0.68, 1);
+$ease-outQuad: cubic-bezier(0.5, 1, 0.89, 1);
