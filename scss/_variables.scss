@@ -21,7 +21,6 @@ $c-gray2: #f2f2f2;
 $c-white: #ffffff;
 $c-white-op03: rgba(#ffffff, 0.3);
 
-// paragraph
 @font-face {
   font-family: "Optima";
   font-style: normal;
@@ -34,3 +33,5 @@ $c-white-op03: rgba(#ffffff, 0.3);
   font-weight: bold;
   src: local("Optima"), url("./fonts/OptimaLTPro-bold.otf") format("opentype");
 }
+
+$ease-out: cubic-bezier(0.33, 1, 0.68, 1);

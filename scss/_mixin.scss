@@ -200,6 +200,15 @@
   background-position: $bgposh $bgposs;
 }
 
+@mixin mask($bgsz: contain, $bgr: no-repeat, $bgposh: center, $bgposs: center) {
+  -webkit-mask-size: $bgsz;
+  -webkit-mask-repeat: $bgr;
+  -webkit-mask-position: $bgposh $bgposs;
+  mask-size: $bgsz;
+  mask-repeat: $bgr;
+  mask-position: $bgposh $bgposs;
+}
+
 @mixin img($w: auto, $h: auto) {
   @include rect($w, $h);
   @include flex;
