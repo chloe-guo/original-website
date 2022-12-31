@@ -1,19 +1,63 @@
 .navbar {
+  @include poa(0, 0, 0, b);
   padding: 32px 48px;
   @include flex(row, space-between);
   &__brand {
     @include flex(row, flex-start, flex-start);
+    &:hover {
+      .brand__original,
+      .brand__registered {
+        &::before {
+          transform: translateY(-120%) rotate(-6deg);
+        }
+        &::after {
+          transform: translateY(0);
+        }
+      }
+    }
     .brand {
+      &__original,
+      &__registered {
+        overflow: hidden;
+        &::before,
+        &::after {
+          @include beaf;
+          @include rect;
+          @include poa(l, 0, 0, 0);
+        }
+        &::before {
+          background: #205288;
+          transform: translateY(0%);
+          transition: all 0.6s $ease-out;
+        }
+        &::after {
+          background: $c-primary0;
+          transform: translateY(120%) rotate(6deg);
+          transition: all 0.6s $ease-out;
+        }
+      }
       &__original {
-        @include rect(auto, 32px);
+        @include rect(106px, 32px);
+        &::before,
+        &::after {
+          -webkit-mask: url("../images/original.svg");
+          mask: url("../images/original.svg");
+          @include mask;
+        }
       }
       &__registered {
-        @include rect(auto, 12px);
+        @include rect(11px, 12px);
         margin-left: 7px;
+        &::before,
+        &::after {
+          -webkit-mask: url("../images/registered.svg");
+          mask: url("../images/registered.svg");
+          @include mask;
+        }
       }
     }
     svg path {
-      fill: #205288;
+      fill: transparent;
     }
   }
   &__nav {
@@ -33,33 +77,16 @@
         }
       }
       &__link {
-        @include rect(auto, 20px);
         @include font-body-2;
-        color: transparent;
         @include flex;
-        overflow: hidden;
-        &::before,
-        &::after {
-          @include beaf(attr(data-text));
-          @include poa(l, 0, 0, 0);
-        }
+        @include ani-text(20px);
         &::before {
           color: $c-black;
-          transform: translateY(0%);
-          transition: all 0.6s $ease-out;
         }
         &::after {
           color: $c-primary0;
-          transform: translateY(120%) rotate(6deg);
-          transition: all 0.6s $ease-out;
         }
         &:hover {
-          &::before {
-            transform: translateY(-120%) rotate(-6deg);
-          }
-          &::after {
-            transform: translateY(0);
-          }
           .nav__icon {
             &::before {
               transform: translateY(-120%) rotate(-6deg);

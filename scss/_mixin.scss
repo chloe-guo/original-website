@@ -230,3 +230,30 @@
     }
   }
 }
+
+@mixin ani-text($h) {
+  @include rect(auto, $h);
+  color: transparent;
+  overflow: hidden;
+  &::before,
+  &::after {
+    @include beaf(attr(data-text));
+    @include poa(l, 0, 0, 0);
+  }
+  &::before {
+    transform: translateY(0%);
+    transition: all 0.6s $ease-out;
+  }
+  &::after {
+    transform: translateY(120%) rotate(6deg);
+    transition: all 0.6s $ease-out;
+  }
+  &:hover {
+    &::before {
+      transform: translateY(-120%) rotate(-6deg);
+    }
+    &::after {
+      transform: translateY(0);
+    }
+  }
+}

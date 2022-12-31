@@ -71,6 +71,12 @@ html .is-unvisible {
   pointer-events: none !important; }
 
 .navbar {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: auto;
   padding: 32px 48px;
   display: flex;
   flex-direction: row;
@@ -81,17 +87,63 @@ html .is-unvisible {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start; }
+    .navbar__brand:hover .brand__original::before,
+    .navbar__brand:hover .brand__registered::before {
+      transform: translateY(-120%) rotate(-6deg); }
+    .navbar__brand:hover .brand__original::after,
+    .navbar__brand:hover .brand__registered::after {
+      transform: translateY(0); }
+    .navbar__brand .brand__original, .navbar__brand .brand__registered {
+      overflow: hidden; }
+      .navbar__brand .brand__original::before, .navbar__brand .brand__original::after, .navbar__brand .brand__registered::before, .navbar__brand .brand__registered::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        position: absolute;
+        margin: auto;
+        left: auto;
+        top: 0;
+        right: 0;
+        bottom: 0; }
+      .navbar__brand .brand__original::before, .navbar__brand .brand__registered::before {
+        background: #205288;
+        transform: translateY(0%);
+        transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
+      .navbar__brand .brand__original::after, .navbar__brand .brand__registered::after {
+        background: #d68f4c;
+        transform: translateY(120%) rotate(6deg);
+        transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
     .navbar__brand .brand__original {
-      width: auto;
+      width: 106px;
       height: 32px;
       border-radius: 0; }
+      .navbar__brand .brand__original::before, .navbar__brand .brand__original::after {
+        -webkit-mask: url("../images/original.svg");
+        mask: url("../images/original.svg");
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center center; }
     .navbar__brand .brand__registered {
-      width: auto;
+      width: 11px;
       height: 12px;
       border-radius: 0;
       margin-left: 7px; }
+      .navbar__brand .brand__registered::before, .navbar__brand .brand__registered::after {
+        -webkit-mask: url("../images/registered.svg");
+        mask: url("../images/registered.svg");
+        -webkit-mask-size: contain;
+        -webkit-mask-repeat: no-repeat;
+        -webkit-mask-position: center center;
+        mask-size: contain;
+        mask-repeat: no-repeat;
+        mask-position: center center; }
     .navbar__brand svg path {
-      fill: #205288; }
+      fill: transparent; }
   .navbar__nav {
     display: flex;
     flex-direction: row;
@@ -107,19 +159,19 @@ html .is-unvisible {
       margin-left: 15px;
       margin-right: 20px; }
     .navbar__nav .nav__link {
-      width: auto;
-      height: 20px;
-      border-radius: 0;
       font-family: "Optima", "Inter", sans-serif;
       font-size: 15px;
       font-weight: 400;
       line-height: 20px;
       letter-spacing: 0;
-      color: transparent;
       display: flex;
       flex-direction: row;
       justify-content: center;
       align-items: center;
+      width: auto;
+      height: 20px;
+      border-radius: 0;
+      color: transparent;
       overflow: hidden; }
       .navbar__nav .nav__link::before, .navbar__nav .nav__link::after {
         content: attr(data-text);
@@ -131,17 +183,19 @@ html .is-unvisible {
         right: 0;
         bottom: 0; }
       .navbar__nav .nav__link::before {
-        color: #131313;
         transform: translateY(0%);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
       .navbar__nav .nav__link::after {
-        color: #d68f4c;
         transform: translateY(120%) rotate(6deg);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
       .navbar__nav .nav__link:hover::before {
         transform: translateY(-120%) rotate(-6deg); }
       .navbar__nav .nav__link:hover::after {
         transform: translateY(0); }
+      .navbar__nav .nav__link::before {
+        color: #131313; }
+      .navbar__nav .nav__link::after {
+        color: #d68f4c; }
       .navbar__nav .nav__link:hover .nav__icon::before {
         transform: translateY(-120%) rotate(-6deg); }
       .navbar__nav .nav__link:hover .nav__icon::after {
