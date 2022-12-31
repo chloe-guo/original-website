@@ -1,0 +1,36 @@
+.service {
+  img {
+    opacity: 0;
+  }
+  svg {
+    opacity: 0;
+    path {
+      transition: fill 0.6s 0.6s $ease-outQuad, stroke 0.6s $ease-outQuad;
+      &.is-bgGray {
+        fill: $c-white;
+      }
+      &.is-bgLine {
+        opacity: 0;
+        fill: $c-primary1;
+        transition: opacity 0.6s $ease-outQuad, fill 0.6s 0.6s $ease-outQuad;
+      }
+      &.is-stroke {
+        stroke: $c-primary1;
+      }
+    }
+    &.is-drawFinish {
+      opacity: 1;
+      path {
+        &.is-bgGray {
+          fill: $c-gray2;
+        }
+        &.is-bgLine {
+          fill: $c-primary0;
+        }
+        &.is-stroke {
+          stroke: $c-primary0;
+        }
+      }
+    }
+  }
+}
