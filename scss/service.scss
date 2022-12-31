@@ -1,14 +1,60 @@
 .service {
-  img {
-    opacity: 0;
+  margin: 10.53rem auto 0 auto;
+  &__title {
+    @include section-title;
+    @include rect(80rem, auto);
+    margin: auto;
+  }
+  &__lists {
+    @include rect(100%, auto);
+    @include flex(row, center, stretch);
+    margin: 3.73rem 0 0 0;
+    border-top: 0.07rem solid $c-black-op01;
+    border-bottom: 0.07rem solid $c-black-op01;
+  }
+  &__item {
+    @include rect(50%, auto);
+    padding: 2.67rem 2.67rem 5.73rem 2.67rem;
+    flex: 0 0 50%;
+    & + .service__item {
+      border-left: 0.07rem solid $c-black-op01;
+    }
+    &:nth-child(2n + 1) {
+      @include flex(column, flex-start, flex-start);
+      svg {
+        @include rect(9.2rem, auto);
+        margin-top: 2.87rem;
+        margin-bottom: 4.87rem;
+        margin-left: 4.8rem;
+      }
+    }
+    &:nth-child(2n) {
+      @include flex(column-reverse, flex-end, flex-start);
+      svg {
+        @include rect(7.8rem, auto);
+        margin-top: 7.87rem;
+        margin-left: 5.47rem;
+      }
+    }
+  }
+  &__info {
+    .info {
+      &__title {
+        @include font-heading-4;
+        color: $c-gray1;
+        @include flex(column, flex-start, flex-start);
+      }
+      &__content {
+        @include font-body-1;
+        color: $c-gray1;
+        margin-top: 1.06rem;
+      }
+    }
   }
   svg {
     opacity: 0;
     path {
       transition: fill 0.6s 0.6s $ease-outQuad, stroke 0.6s $ease-outQuad;
-      &.is-bgGray {
-        fill: $c-white;
-      }
       &.is-bgLine {
         opacity: 0;
         fill: $c-primary1;
@@ -21,9 +67,6 @@
     &.is-drawFinish {
       opacity: 1;
       path {
-        &.is-bgGray {
-          fill: $c-gray2;
-        }
         &.is-bgLine {
           fill: $c-primary0;
         }
