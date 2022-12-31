@@ -104,13 +104,15 @@
     &:hover {
       .btn {
         &__icon {
-          background: rgba($c-white, 1);
+          border: 0.07rem solid rgba($c-white, 0);
+          background: $c-white;
         }
       }
     }
     .btn {
       &__icon {
         border: 0.07rem solid $c-white;
+        background: rgba($c-white, 0);
         &::before,
         &::after {
           border: 0.07rem solid $c-white;
