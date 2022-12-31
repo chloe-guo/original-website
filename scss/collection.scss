@@ -68,7 +68,7 @@
     &:hover {
       .btn {
         &__icon {
-          border: 0.07rem solid transparent;
+          border: 0.07rem solid $c-primary2;
           background: $c-primary2;
         }
       }

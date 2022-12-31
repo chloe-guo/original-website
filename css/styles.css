@@ -877,7 +877,7 @@ html header {
         transform: translateY(150%) rotate(12deg);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
     .collection__btn:hover .btn__icon {
-      border: 0.07rem solid transparent;
+      border: 0.07rem solid #dbbb76;
       background: #dbbb76; }
     .collection__btn .btn__icon {
       border: 0.07rem solid rgba(19, 19, 19, 0.3); }
