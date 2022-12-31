@@ -1,20 +1,21 @@
 .concept {
   background: $c-primary1;
-  padding-top: calc(178px - 120px);
-  @include flex(row, space-between);
+  padding-top: 3.87rem;
+  @include flex(row, flex-start, flex-start);
   &__topImage {
-    @include img(420px, auto);
+    @include img(28rem, auto);
     @include poa(l, 0, 0, b);
   }
   &__swiper {
-    flex: 0 0 708px;
-    @include img(708px, 967px);
-    transform: translateY(120px);
+    flex: 0 0 47.2rem;
+    @include rect(47.2rem, 64.47rem);
+    transform: translateY(8rem);
     margin: 0;
     .slide {
       &__image {
+        @include img(100%, auto);
         transform: scale(1.1);
-        filter: blur(6px);
+        filter: blur(0.4rem);
         transition: filter 0.6s $ease-outQuad, transform 0.6s 0.3s $ease-outQuad;
       }
       &__text {
@@ -22,13 +23,13 @@
         color: transparent;
         text-transform: capitalize;
         mix-blend-mode: overlay;
-        @include poa(72px, t, 72px, 34px);
+        @include poa(4.8rem, t, 4.8rem, 2.27rem);
         @include flex(column, flex-start, flex-start);
         span {
-          @include rect(100%, 146px);
+          @include rect(100%, 9.73rem);
           overflow: hidden;
           @media (max-width: $md) {
-            @include rect(100%, 72px);
+            @include rect(100%, 4.8rem);
           }
           &::before {
             @include beaf(attr(data-text));
@@ -51,7 +52,7 @@
         .slide {
           &__image {
             transform: scale(1);
-            filter: blur(0px);
+            filter: blur(0rem);
           }
           &__text {
             span {
@@ -64,18 +65,82 @@
       }
     }
   }
+
+  &__info {
+    @include rect(32.4rem, auto);
+    @include flex(column, flex-start, flex-end);
+    margin-left: 8.4rem;
+    margin-top: 19.73rem;
+  }
+  &__tag {
+    @include font-heading-3;
+    color: $c-white;
+    text-transform: uppercase;
+    transform-origin: left top;
+    transform: translateY(-0.8rem) rotate(90deg);
+    @include poa(-4.67rem, 0, r, b);
+    @include flex;
+    &::before {
+      @include beaf;
+      @include rect(1.6rem, 0);
+      border: 0.07rem solid $c-white;
+      transform: translate(-0.27rem, -0.2rem) rotate(110deg);
+    }
+  }
   &__title {
     @include font-heading-1;
     color: $c-white;
     text-transform: capitalize;
-    @include rect(486px, auto);
+    @include rect(32.4rem, auto);
     @include flex(column, flex-start, flex-start);
-    margin-right: 120px;
   }
   &__content {
     @include font-body-1;
     color: $c-white;
-    @include rect(282px, auto);
-    margin-top: 79px;
+    @include rect(18.8rem, auto);
+    margin-top: 5.27rem;
+  }
+  &__btnGroup {
+    @include rect(18.8rem, auto);
+    margin-top: 3.2rem;
+    @include flex(column, flex-start, flex-start);
+    @include font-button;
+    color: $c-white;
+  }
+  &__btn {
+    @include flex(row, flex-start, center);
+    @include btn;
+    &:hover {
+      .btn {
+        &__icon {
+          background: rgba($c-white, 1);
+        }
+      }
+    }
+    .btn {
+      &__icon {
+        border: 0.07rem solid $c-white;
+        &::before,
+        &::after {
+          border: 0.07rem solid $c-white;
+        }
+      }
+      &__image {
+        &::before {
+          background: $c-white;
+        }
+        &::after {
+          background: $c-primary0;
+        }
+      }
+      &__text {
+        &::before {
+          color: $c-white;
+        }
+        &::after {
+          color: $c-white;
+        }
+      }
+    }
   }
 }

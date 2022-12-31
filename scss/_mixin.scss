@@ -1,108 +1,113 @@
 @mixin font-heading-1 {
   font-family: "Optima", "Inter", sans-serif;
-  font-size: 96px;
+  font-size: 6.4rem;
   font-weight: 400;
-  line-height: 83px;
+  line-height: 0.86;
   letter-spacing: 0;
   @media (max-width: $md) {
     font-size: 56px;
-    line-height: 48px;
   }
 }
 
 @mixin font-heading-2 {
   font-family: "Optima", "Inter", sans-serif;
-  font-size: 28px;
+  font-size: 1.87rem;
   font-weight: 400;
-  line-height: 36px;
+  line-height: 1.3;
   letter-spacing: 0;
   @media (max-width: $md) {
     font-size: 20px;
-    line-height: 26px;
   }
 }
 
 @mixin font-heading-3 {
   font-family: "Optima", "Inter", sans-serif;
-  font-size: 24px;
+  font-size: 1.6rem;
   font-weight: 400;
-  line-height: 31px;
+  line-height: 1.3;
   letter-spacing: 0;
   @media (max-width: $md) {
-    font-size: 15px;
-    line-height: 20px;
+    font-size: 1rem;
   }
 }
 
 @mixin font-heading-4 {
   font-family: "Optima", "Inter", sans-serif;
-  font-size: 24px;
+  font-size: 1.6rem;
   font-weight: 700;
-  line-height: 31px;
+  line-height: 1, 3;
   letter-spacing: 0;
   @media (max-width: $md) {
-    font-size: 22px;
-    line-height: 29px;
+    font-size: 1.47rem;
   }
 }
 
 @mixin font-body-1 {
   font-family: "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 1.04vw;
+  // font-size: 15px;
   font-weight: 400;
-  line-height: 23px;
+  line-height: 1.5;
   letter-spacing: 0;
+  @media (max-width: $xl) {
+    font-size: 15px;
+  }
+  @media (max-width: $md) {
+    font-size: 4.17vw;
+  }
+  @media (max-width: $xs) {
+    font-size: 15px;
+  }
 }
 
 @mixin font-body-2 {
   font-family: "Optima", "Inter", sans-serif;
-  font-size: 15px;
+  font-size: 1rem;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.3;
   letter-spacing: 0;
 }
 
 @mixin font-minium {
   font-family: "Optima", "Inter", sans-serif;
-  font-size: 12px;
+  font-size: 0.8rem;
   font-weight: 400;
-  line-height: 16px;
+  line-height: 1.3;
   letter-spacing: 0;
 }
 
 @mixin font-button {
   font-family: "Optima", "Inter", sans-serif;
-  font-size: 20px;
+  font-size: 1.33rem;
   font-weight: 400;
-  line-height: 26px;
-  letter-spacing: -0.002em;
+  line-height: 1.3;
+  letter-spacing: -0.002rem;
   @media (max-width: $md) {
-    font-size: 16px;
-    line-height: 21px;
+    font-size: 1.07rem;
   }
 }
 
 @mixin font-display-1 {
   font-family: "Optima", "Inter", sans-serif;
-  font-size: 120px;
+  font-size: 8rem;
   font-weight: 400;
-  line-height: 156px;
+  line-height: 1.3;
   letter-spacing: 0;
   @media (max-width: $md) {
-    font-size: 80px;
-    line-height: 80px;
+    font-size: 5.3rem;
+    line-height: 1;
   }
 }
 
 @mixin font-display-2 {
   font-family: "Optima", "Inter", sans-serif;
-  font-size: 112px;
+  font-size: 7.47rem;
   font-weight: 400;
-  line-height: 146px;
+  line-height: 1.3;
   letter-spacing: 0;
   @media (max-width: $md) {
-    font-size: 72px;
-    line-height: 72px;
+    font-size: 4.8rem;
+    line-height: 1;
   }
 }
 
@@ -177,7 +182,7 @@
   border-radius: $bdrs;
 }
 
-@mixin circle($r) {
+@mixin circle($r: 100%) {
   width: $r;
   height: $r;
   border-radius: 50%;
@@ -253,7 +258,112 @@
       transform: translateY(-150%) rotate(-12deg);
     }
     &::after {
-      transform: translateY(0);
+      transform: translateY(0) rotate(0deg);
     }
+  }
+}
+
+@mixin btn {
+  @include flex(row, flex-start, center);
+  &:hover {
+    .btn {
+      &__icon {
+        &::before {
+          animation: ripple 0.8s $ease-outQuad;
+        }
+        &::after {
+          animation: ripple 0.8s 0.4s $ease-outQuad;
+        }
+      }
+      &__image {
+        &::before {
+          opacity: 0;
+          transform: translate(25%, -25%) rotate(-12deg);
+        }
+        &::after {
+          opacity: 1;
+          transform: translateY(0) rotate(0deg);
+        }
+      }
+      &__text {
+        &::before {
+          transform: translateY(-150%) rotate(-12deg);
+        }
+        &::after {
+          transform: translateY(0) rotate(0deg);
+        }
+      }
+    }
+  }
+  .btn {
+    &__icon {
+      @include circle(4.27vw);
+      @include flex;
+      background: rgba($c-white, 0);
+      transition: all 0.6s $ease-outCubic;
+      &::before,
+      &::after {
+        @include beaf;
+        @include circle(4.27vw);
+        @include poa(50%, 50%, r, b);
+        transform: translate(-50%, -50%);
+        opacity: 0;
+      }
+    }
+    &__image {
+      @include rect(1.2rem, 0.6rem);
+      &::before,
+      &::after {
+        @include beaf;
+        @include rect;
+        @include poa(l, 0, 0, b);
+        -webkit-mask: url("../images/arrow.svg");
+        mask: url("../images/arrow.svg");
+        @include mask;
+      }
+      &::before {
+        opacity: 1;
+        transform: translateY(0%) rotate(0deg);
+        transition: all 0.6s $ease-outCubic;
+      }
+      &::after {
+        opacity: 0;
+        transform: translate(-25%, 25%) rotate(12deg);
+        transition: all 0.6s $ease-outCubic;
+      }
+    }
+    &__text {
+      margin-left: 1.6rem;
+      @include rect(auto, 1.73rem);
+      color: transparent;
+      overflow: hidden;
+      &::before,
+      &::after {
+        @include beaf(attr(data-text));
+        @include poa(l, 0, 0, 0);
+      }
+      &::before {
+        transform: translateY(0%) rotate(0deg);
+        transition: all 0.6s $ease-outCubic;
+      }
+      &::after {
+        transform: translateY(150%) rotate(12deg);
+        transition: all 0.6s $ease-outCubic;
+      }
+    }
+  }
+}
+
+@keyframes ripple {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  75%,
+  100% {
+    width: 180%;
+    height: 180%;
+    opacity: 0;
   }
 }
