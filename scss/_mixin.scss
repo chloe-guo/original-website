@@ -311,7 +311,7 @@
   }
 }
 
-@mixin ani-icon-btn {
+@mixin ani-icon-btn($size: 4.27rem, $icon: "../images/arrow.svg", $text: "y") {
   @include flex(row, flex-start, center);
   &:hover {
     .btn {
@@ -327,77 +327,88 @@
       &__image {
         &::before {
           opacity: 0;
-          transform: translate(25%, -25%) rotate(-12deg);
+          @if ($icon == "../images/arrow.svg") {
+            transform: translate(25%, -25%) rotate(-12deg);
+          } @else {
+            transform: translateY(-50%) rotate(-12deg);
+          }
         }
         &::after {
           opacity: 1;
-          transform: translateY(0) rotate(0deg);
+          transform: translate(0%, 0%) rotate(0deg);
         }
       }
-      &__text {
-        &::before {
-          transform: translateY(-150%) rotate(-12deg);
-        }
-        &::after {
-          transform: translateY(0) rotate(0deg);
+      @if ($text == "y") {
+        &__text {
+          &::before {
+            transform: translateY(-150%) rotate(-12deg);
+          }
+          &::after {
+            transform: translateY(0) rotate(0deg);
+          }
         }
       }
     }
   }
   .btn {
     &__icon {
-      @include circle(4.27vw);
+      @include circle($size);
       @include flex;
       background: rgba($c-white, 0);
       transition: all 0.6s $ease-outCubic;
       &::before,
       &::after {
         @include beaf;
-        @include circle(4.27vw);
+        @include circle($size);
         @include poa(50%, 50%, r, b);
         transform: translate(-50%, -50%);
         opacity: 0;
       }
     }
     &__image {
-      @include rect(1.2rem, 0.6rem);
       &::before,
       &::after {
         @include beaf;
         @include rect;
         @include poa(l, 0, 0, b);
-        -webkit-mask: url("../images/arrow.svg");
-        mask: url("../images/arrow.svg");
+        -webkit-mask: url($icon);
+        mask: url($icon);
         @include mask;
       }
       &::before {
         opacity: 1;
-        transform: translateY(0%) rotate(0deg);
+        transform: translate(0%, 0%) rotate(0deg);
         transition: all 0.6s $ease-outCubic;
       }
       &::after {
         opacity: 0;
-        transform: translate(-25%, 25%) rotate(12deg);
+        @if ($icon == "../images/arrow.svg") {
+          transform: translate(-25%, 25%) rotate(12deg);
+        } @else {
+          transform: translateY(50%) rotate(12deg);
+        }
         transition: all 0.6s $ease-outCubic;
       }
     }
-    &__text {
-      margin-left: 1.6rem;
-      @include rect(auto, 1.73rem);
-      color: transparent;
-      overflow: hidden;
-      &::before,
-      &::after {
-        @include beaf(attr(data-text));
-        @include poa(l, 0, 0, 0);
-      }
-      &::before {
-        transform: translateY(0%) rotate(0deg);
-        transition: all 0.6s $ease-outCubic;
-      }
-      &::after {
-        transform: translateY(150%) rotate(12deg);
-        transition: all 0.6s $ease-outCubic;
+    @if ($text == "y") {
+      &__text {
+        margin-left: 1.6rem;
+        @include rect(auto, 1.73rem);
+        color: transparent;
+        overflow: hidden;
+        &::before,
+        &::after {
+          @include beaf(attr(data-text));
+          @include poa(l, 0, 0, 0);
+        }
+        &::before {
+          transform: translateY(0%) rotate(0deg);
+          transition: all 0.6s $ease-outCubic;
+        }
+        &::after {
+          transform: translateY(150%) rotate(12deg);
+          transition: all 0.6s $ease-outCubic;
+        }
       }
     }
   }

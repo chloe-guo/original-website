@@ -23,21 +23,23 @@ document.addEventListener("DOMContentLoaded", function () {
   SVGInject.setOptions({
     afterInject: function (img, svg) {
       svg.style.opacity = 1;
-      setTimeout(() => {
-        const el_path = document.getElementsByClassName("is-bgLine");
-        Array.prototype.filter.call(
-          el_path,
-          (path) => (path.style.opacity = 1)
-        );
-      }, 1200);
-      let SVGInject = new Walkway({
-        selector: ".js-SVGInject",
-        duration: "2400",
-        easing: "cubic-bezier(0.11, 0, 0.5, 0)",
-      });
-      SVGInject.draw(function () {
-        svg.classList.add("is-drawFinish");
-      });
+      if (svg.classList.contains("js-SVGInject")) {
+        setTimeout(() => {
+          const el_path = document.getElementsByClassName("is-bgLine");
+          Array.prototype.filter.call(
+            el_path,
+            (path) => (path.style.opacity = 1)
+          );
+        }, 1200);
+        let SVGDraw = new Walkway({
+          selector: ".js-SVGInject",
+          duration: "2400",
+          easing: "cubic-bezier(0.11, 0, 0.5, 0)",
+        });
+        SVGDraw.draw(function () {
+          svg.classList.add("is-drawFinish");
+        });
+      }
     },
   });
 

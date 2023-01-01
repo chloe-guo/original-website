@@ -1,0 +1,68 @@
+.contact {
+  background: $c-primary3;
+  @include rect(100%, 49.67rem);
+  @include flex(row, space-between, center);
+  padding: 0 8.33rem 0 8rem;
+  overflow: hidden;
+  &__title {
+    @include section-title($c-primary0);
+  }
+  &__btn {
+    @include circle(9.6rem);
+    @include flex(row, flex-start, center);
+    @include ani-icon-btn(9.6rem, "../images/mail.svg", "n");
+    @include poa;
+    &:hover {
+      .btn {
+        &__icon {
+          background: $c-primary2;
+        }
+      }
+    }
+    .btn {
+      &__icon {
+        background: $c-primary1;
+        box-shadow: 0 0.27rem 2.13rem -0.53rem $c-shadow;
+        &::before {
+          border: 0.07rem solid $c-primary1;
+        }
+        &::after {
+          border: 0.07rem solid $c-primary2;
+        }
+      }
+      &__image {
+        @include rect(2.33rem, 1.67rem);
+        &::before {
+          background: $c-white;
+        }
+        &::after {
+          background: $c-white;
+        }
+      }
+      &__text {
+        &::before {
+          color: $c-gray1;
+        }
+        &::after {
+          color: $c-primary2;
+        }
+      }
+    }
+  }
+  &__line {
+    @include rect(20.47rem, 0);
+    border-top: 0.07rem solid $c-primary0;
+  }
+  &__circle {
+    @include circle(46.13rem);
+    @include poa;
+    transform: translate(3.5%, 14%);
+    svg {
+      @include rect(100%, auto);
+    }
+  }
+  &__can {
+    @include img(auto, 49.33rem);
+    @include poa;
+  }
+}
