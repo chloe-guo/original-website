@@ -1,0 +1,56 @@
+.marquee {
+  margin: 4.67rem auto 0 auto;
+  &__title {
+    @include section-title;
+    @include rect(80rem, auto);
+    margin: auto;
+  }
+  &__wrap {
+    @include rect(100%, auto);
+    @include flex(column, flex-start, flex-start);
+    margin: 6.53rem 0 0 0;
+    border-top: 0.07rem solid $c-black-op01;
+    border-bottom: 0.07rem solid $c-black-op01;
+  }
+  &__item {
+    @include font-display-1;
+    color: $c-primary2;
+    text-transform: capitalize;
+    @include flex(row, flex-start, flex-start);
+    padding: 0.53rem 0;
+    & + .marquee__item {
+      border-top: 0.07rem solid $c-black-op01;
+    }
+    &:nth-child(2n + 1) {
+      animation: marquee 12s linear infinite;
+    }
+    &:nth-child(2n) {
+      animation: marquee 12s reverse linear infinite;
+    }
+    @keyframes marquee {
+      0% {
+        transform: translateX(-50%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+  }
+  &__group {
+    @include flex(row, flex-start, flex-start);
+    padding: 0 1rem;
+  }
+  &__text {
+    white-space: nowrap;
+    padding: 0 3.23rem;
+    & + .marquee__text {
+      &::before {
+        @include beaf;
+        @include rect(0, 6.4rem);
+        border-left: 0.07rem solid $c-primary2;
+        transform: translateY(-12%) rotate(20deg);
+        @include poa(0, 0, r, 0);
+      }
+    }
+  }
+}
