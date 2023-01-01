@@ -8,3 +8,16 @@
     opacity: 1;
   }
 }
+
+[data-aos="ani-rotate"] {
+  opacity: 0;
+  transform: translate(3.5%, 14%) rotate(-120deg) !important;
+  transition-property: opacity, transform;
+  transition-duration: 1.2s, 2.4s !important;
+  transition-delay: 1.2s, 1.8s;
+  transition-timing-function: $ease-inCubic, $ease-outCubic !important;
+  &.aos-animate {
+    opacity: 1;
+    transform: translate(3.5%, 14%) rotate(0deg) !important;
+  }
+}

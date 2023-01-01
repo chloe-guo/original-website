@@ -1,16 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-  AOS.init({
-    duration: 1200,
-    easing: "ease-in-out-sine",
-  });
-
-  setTimeout(() => {
-    document.body.classList.remove("is-unOpening");
-    setTimeout(() => {
-      swiper.init();
-    }, 1200);
-  }, 1200);
-
   let swiper = new Swiper(".swiper", {
     init: false,
     speed: 600,
@@ -46,7 +34,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1200);
         let SVGDraw = new Walkway({
           selector: ".js-SVGInject",
-          duration: "2400",
+          duration: "3600",
           easing: "cubic-bezier(0.11, 0, 0.5, 0)",
         });
         SVGDraw.draw(function () {
@@ -56,5 +44,34 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  SVGInject(document.getElementsByClassName("js-SVGInject"));
+  AOS.init({
+    duration: 1200,
+    easing: "ease-in-out-sine",
+    anchorPlacement: "top-bottom",
+    once: true,
+  });
+
+  setTimeout(() => {
+    document.body.classList.remove("is-unOpening");
+    setTimeout(() => {
+      swiper.init();
+    }, 1200);
+  }, 1200);
+
+  const el_service = document.getElementById("service");
+  service_ani();
+  window.addEventListener("scroll", function () {
+    service_ani();
+  });
+
+  function service_ani() {
+    if (el_service.getBoundingClientRect().top < window.scrollY) {
+      if (el_service.classList.contains("is-unDraw")) {
+        el_service.classList.remove("is-unDraw");
+        setTimeout(() => {
+          SVGInject(document.getElementsByClassName("js-SVGInject"));
+        }, 1800);
+      }
+    }
+  }
 });

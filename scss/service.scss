@@ -19,10 +19,13 @@
     & + .service__item {
       border-left: 0.07rem solid $c-black-op01;
     }
+    svg {
+      @include rect;
+    }
     &:nth-child(2n + 1) {
       @include flex(column, flex-start, flex-start);
-      svg {
-        @include rect(9.2rem, auto);
+      .service__image {
+        @include rect(9.2rem, 10.87rem);
         margin-top: 2.87rem;
         margin-bottom: 4.87rem;
         margin-left: 4.8rem;
@@ -30,8 +33,8 @@
     }
     &:nth-child(2n) {
       @include flex(column-reverse, flex-end, flex-start);
-      svg {
-        @include rect(7.8rem, auto);
+      .service__image {
+        @include rect(7.8rem, 10.4rem);
         margin-top: 7.87rem;
         margin-left: 5.47rem;
       }
@@ -41,13 +44,33 @@
     .info {
       &__title {
         @include font-heading-4;
-        color: $c-gray1;
+        color: transparent;
+        text-transform: capitalize;
         @include flex(column, flex-start, flex-start);
+        span {
+          @include rect(100%, 2.27rem);
+          overflow: hidden;
+          &::before {
+            @include beaf(attr(data-text));
+            color: $c-gray1;
+            @include poa(0, 0, r, b);
+            transform: translateY(0%) rotate(0deg);
+          }
+          @for $i from 1 through 2 {
+            &:nth-child(#{$i}) {
+              &::before {
+                transition: all 0.6s ($i - 1 + 36) * 0.05s $ease-outCubic;
+              }
+            }
+          }
+        }
       }
       &__content {
         @include font-body-1;
         color: $c-gray1;
         margin-top: 1.06rem;
+        transition: opacity 1.2s 1.8s $ease-inCubic,
+          transform 1.2s 1.8s $ease-outCubic;
       }
     }
   }
@@ -72,6 +95,25 @@
         }
         &.is-stroke {
           stroke: $c-primary0;
+        }
+      }
+    }
+  }
+  .is-unDraw {
+    .service {
+      &__info {
+        .info {
+          &__title {
+            span {
+              &::before {
+                transform: translateY(120%) rotate(6deg);
+              }
+            }
+          }
+          &__content {
+            opacity: 0;
+            transform: translateY(200%);
+          }
         }
       }
     }

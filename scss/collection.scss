@@ -10,8 +10,11 @@
     @include flex(row, flex-start);
     .gallery {
       &__item {
-        overflow: hidden;
+        > div {
+          overflow: hidden;
+        }
         img {
+          object-fit: cover;
           transition: all 0.6s $ease-outQuad;
         }
         &:hover {
@@ -23,18 +26,27 @@
           margin-left: 1.6rem;
         }
         &:nth-child(1) {
-          @include img(18.8rem, 24.27rem);
+          > div {
+            @include img(18.8rem, 24.27rem);
+          }
         }
         &:nth-child(2) {
-          @include img(32.4rem, 43.67rem);
+          > div {
+            @include img(32.4rem, 43.67rem);
+          }
         }
         &:nth-child(3) {
-          @include img(25.6rem, 19.73rem);
+          @include rect(25.6rem, 19.73rem);
+          > div {
+            @include img(25.6rem, 19.73rem);
+          }
           @include poa(l, 0, 0, 0);
           transform: translateY(calc(-100% - 1.6rem));
         }
         &:nth-child(4) {
-          @include img(18.8rem, 20.07rem);
+          > div {
+            @include img(18.8rem, 20.07rem);
+          }
         }
       }
       &__link {
@@ -71,6 +83,8 @@
     @include flex(column, flex-start, flex-end);
     @include font-button;
     color: $c-gray1;
+    transition: opacity 1.2s 0.9s $ease-inCubic,
+      transform 1.2s 0.9s $ease-outCubic !important;
   }
   &__btn {
     @include flex(row, flex-start, center);

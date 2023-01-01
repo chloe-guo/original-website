@@ -121,8 +121,8 @@
     @include flex(column, flex-start, flex-start);
     @include font-button;
     color: $c-white;
-    transition: opacity 1.2s 1.8s $ease-inCubic,
-      transform 1.2s 1.8s $ease-outCubic;
+    transition: opacity 1.2s 1.4s $ease-inCubic,
+      transform 1.2s 1.4s $ease-outCubic;
   }
   &__btn {
     @include flex(row, flex-start, center);
@@ -170,7 +170,7 @@ body.is-unOpening {
     &__title {
       span {
         &::before {
-          transform: translateY(165%) rotate(12deg);
+          transform: translateY(170%) rotate(12deg);
         }
       }
     }
@@ -183,7 +183,7 @@ body.is-unOpening {
       opacity: 0;
     }
     &__swiper {
-      transform: translateY(60%);
+      transform: translateY(30%);
       opacity: 0;
     }
     &__topImage {
