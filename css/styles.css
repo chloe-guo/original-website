@@ -18,6 +18,16 @@
     width: calc(100% + 3.2rem);
     height: calc(100% + 3.2rem);
     opacity: 0; } }
+@keyframes ripple-big {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1; }
+  75%,
+  100% {
+    width: calc(100% + 6.4rem);
+    height: calc(100% + 6.4rem);
+    opacity: 0; } }
 html,
 body {
   margin: 0;
@@ -1178,9 +1188,9 @@ html img.js-SVGInject {
     .contact__btn:hover .btn__icon {
       transition: background 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
       .contact__btn:hover .btn__icon::before {
-        animation: ripple 1s cubic-bezier(0.5, 1, 0.89, 1); }
+        animation: ripple-big 1s cubic-bezier(0.5, 1, 0.89, 1); }
       .contact__btn:hover .btn__icon::after {
-        animation: ripple 1s 0.5s cubic-bezier(0.5, 1, 0.89, 1); }
+        animation: ripple-big 1s 0.5s cubic-bezier(0.5, 1, 0.89, 1); }
     .contact__btn:hover .btn__image::before {
       opacity: 0;
       transform: translateY(-50%) rotate(-12deg); }

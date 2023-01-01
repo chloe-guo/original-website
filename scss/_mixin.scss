@@ -311,17 +311,22 @@
   }
 }
 
-@mixin ani-icon-btn($size: 4.27rem, $icon: "../images/arrow.svg", $text: "y") {
+@mixin ani-icon-btn(
+  $size: 4.27rem,
+  $ani: ripple,
+  $icon: "../images/arrow.svg",
+  $text: "y"
+) {
   @include flex(row, flex-start, center);
   &:hover {
     .btn {
       &__icon {
         transition: background 0.6s $ease-outCubic;
         &::before {
-          animation: ripple 1s $ease-outQuad;
+          animation: $ani 1s $ease-outQuad;
         }
         &::after {
-          animation: ripple 1s 0.5s $ease-outQuad;
+          animation: $ani 1s 0.5s $ease-outQuad;
         }
       }
       &__image {
@@ -424,6 +429,20 @@
   100% {
     width: calc(100% + 3.2rem);
     height: calc(100% + 3.2rem);
+    opacity: 0;
+  }
+}
+
+@keyframes ripple-big {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  75%,
+  100% {
+    width: calc(100% + 6.4rem);
+    height: calc(100% + 6.4rem);
     opacity: 0;
   }
 }

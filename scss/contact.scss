@@ -10,7 +10,7 @@
   &__btn {
     @include circle(9.6rem);
     @include flex(row, flex-start, center);
-    @include ani-icon-btn(9.6rem, "../images/mail.svg", "n");
+    @include ani-icon-btn(9.6rem, ripple-big, "../images/mail.svg", "n");
     @include poa;
     &:hover {
       .btn {
