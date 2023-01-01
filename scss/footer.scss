@@ -1,7 +1,6 @@
-.navbar {
-  @include poa(0, 0, 0, b);
-  padding: 2.12rem 3.2rem;
-  @include flex(row, space-between);
+.footer {
+  padding: 8rem 8rem 3.33rem 8rem;
+  @include flex(row, space-between, flex-end);
   &__brand {
     @include flex(row, flex-start, flex-start);
     &:hover {
@@ -26,7 +25,7 @@
           @include poa(l, 0, 0, 0);
         }
         &::before {
-          background: #205288;
+          background: $c-black;
           transform: translateY(0%) rotate(0deg);
           transition: all 0.6s $ease-outCubic;
         }
@@ -60,72 +59,42 @@
       fill: transparent;
     }
   }
+  &__links {
+    @include flex(row, flex-start, flex-end);
+  }
   &__nav {
-    @include flex(row, flex-end);
+    @include flex;
+    @include font-body-2;
     text-transform: capitalize;
-    padding: 1.3rem 2.67rem 0.93rem 2.67rem;
-    border-radius: 9999px;
-    background: $c-primary4;
+    margin-left: 12rem;
     .nav {
       &__item {
         & + .nav__item {
-          margin-left: 2.67rem;
-        }
-        & + .nav__dash {
-          margin-left: 1rem;
-          margin-right: 1.3rem;
+          margin: 0 2rem;
+          &::before {
+            @include beaf;
+            @include rect(0, 16px);
+            border-left: 0.07rem solid $c-black-op03;
+            transform: translateY(-15%) rotateZ(20deg);
+            @include poa(-1rem, 0, r, 0);
+          }
         }
       }
       &__link {
-        @include font-body-2;
-        @include flex;
+        display: block;
         @include ani-text(1.3rem);
         &::before {
-          color: $c-black;
+          color: $c-gray1;
         }
         &::after {
           color: $c-primary0;
         }
-        &:hover {
-          .nav__icon {
-            &::before {
-              transform: translateY(-150%) rotate(-12deg);
-            }
-            &::after {
-              transform: translateY(0) rotate(0deg);
-            }
-          }
-        }
-      }
-      &__icon {
-        @include rect(0.8rem, 1.3rem);
-        margin-right: 0.47rem;
-        overflow: hidden;
-        &::before,
-        &::after {
-          @include beaf;
-          @include rect(100%, 1rem);
-          @include poa(l, 0, 0, b);
-          -webkit-mask: url("../images/shop.svg");
-          mask: url("../images/shop.svg");
-          @include mask;
-        }
-        &::before {
-          background: $c-black;
-          transform: translateY(0%) rotate(0deg);
-          transition: all 0.6s $ease-outCubic;
-        }
-        &::after {
-          background: $c-primary0;
-          transform: translateY(150%) rotate(12deg);
-          transition: all 0.6s $ease-outCubic;
-        }
-      }
-      &__line {
-        @include rect(1.6rem, 0);
-        border-top: 0.07rem solid $c-primary1;
-        transform: translateY(-0.2rem) matrix(-0.34, 0.94, 0.94, 0.34, 0, 0);
       }
     }
+  }
+  &__copyright {
+    @include font-minium;
+    color: $c-gray1;
+    text-transform: capitalize;
   }
 }
