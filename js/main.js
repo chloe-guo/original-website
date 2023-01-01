@@ -1,5 +1,18 @@
 document.addEventListener("DOMContentLoaded", function () {
-  new Swiper(".swiper", {
+  AOS.init({
+    duration: 1200,
+    easing: "ease-in-out-sine",
+  });
+
+  setTimeout(() => {
+    document.body.classList.remove("is-unOpening");
+    setTimeout(() => {
+      swiper.init();
+    }, 1200);
+  }, 1200);
+
+  let swiper = new Swiper(".swiper", {
+    init: false,
     speed: 600,
     autoplay: {
       delay: 6000,

@@ -1,0 +1,10 @@
+[data-aos="ani-title"] {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: 1.2s;
+  transition-delay: 0;
+  transition-timing-function: $ease-outCubic !important;
+  &.aos-animate {
+    opacity: 1;
+  }
+}

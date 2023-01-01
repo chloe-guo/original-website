@@ -5,12 +5,16 @@
   &__topImage {
     @include img(28rem, auto);
     @include poa(l, 0, 0, b);
+    transition: opacity 1.2s 1.2s $ease-inCubic, filter 0.6s 1.2s $ease-inCubic,
+      transform 1.2s 1.2s $ease-outCubic;
   }
   &__swiper {
     flex: 0 0 47.2rem;
     @include rect(47.2rem, 64.47rem);
     transform: translateY(8rem);
     margin: 0;
+    transition: opacity 0.6s 1.2s $ease-inCubic,
+      transform 1.8s 1.2s $ease-outCubic;
     .slide {
       &__image {
         @include img(100%, auto);
@@ -65,7 +69,6 @@
       }
     }
   }
-
   &__info {
     @include rect(32.4rem, auto);
     @include flex(column, flex-start, flex-end);
@@ -80,16 +83,37 @@
   }
   &__title {
     @include font-heading-1;
-    color: $c-white;
+    color: transparent;
     text-transform: capitalize;
     @include rect(32.4rem, auto);
     @include flex(column, flex-start, flex-start);
+    transform: translateY(-0.87rem);
+    span {
+      @include rect(100%, 6.4rem);
+      overflow: hidden;
+      &::before {
+        @include beaf(attr(data-text));
+        color: $c-white;
+        @include poa(0, 0, r, b);
+        transform: translateY(12%) rotate(0deg);
+      }
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          transform: translateY(($i - 1) * -0.87rem);
+          &::before {
+            transition: all 1.2s ($i - 1 + 16) * 0.05s $ease-outCubic;
+          }
+        }
+      }
+    }
   }
   &__content {
     @include font-body-1;
     color: $c-white;
     @include rect(18.8rem, auto);
-    margin-top: 5.27rem;
+    margin-top: calc(-0.87rem * 3 + 5.27rem);
+    transition: opacity 1.2s 1.2s $ease-inCubic,
+      transform 1.2s 1.2s $ease-outCubic;
   }
   &__btnGroup {
     @include rect(18.8rem, auto);
@@ -97,6 +121,8 @@
     @include flex(column, flex-start, flex-start);
     @include font-button;
     color: $c-white;
+    transition: opacity 1.2s 1.8s $ease-inCubic,
+      transform 1.2s 1.8s $ease-outCubic;
   }
   &__btn {
     @include flex(row, flex-start, center);
@@ -135,6 +161,35 @@
           color: $c-white;
         }
       }
+    }
+  }
+}
+
+body.is-unOpening {
+  .concept {
+    &__title {
+      span {
+        &::before {
+          transform: translateY(165%) rotate(12deg);
+        }
+      }
+    }
+    &__content {
+      transform: translateY(60%);
+      opacity: 0;
+    }
+    &__btnGroup {
+      transform: translateY(60%);
+      opacity: 0;
+    }
+    &__swiper {
+      transform: translateY(60%);
+      opacity: 0;
+    }
+    &__topImage {
+      transform: translateY(-60%);
+      opacity: 0;
+      filter: blur(3px) brightness(110%);
     }
   }
 }

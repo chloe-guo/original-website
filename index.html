@@ -7,12 +7,13 @@
 		<title>Document</title>
 		<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
 
 		<link rel="stylesheet" href="./css/styles.css">
 
 		<script src="./js/svg-inject.js"></script>
 	</head>
-	<body>
+	<body class="is-unOpening">
 		<header>
 			<nav class="navbar">
 				<a href="JavaScript:;" class="navbar__brand">
@@ -45,7 +46,7 @@
 			</nav>
 		</header>
 		<main>
-			<section class="concept">
+			<section class="concept" id="concept">
 				<div class="concept__topImage">
 					<img src="./images/top-image.jpg" alt="white cotton buds on white surface">
 				</div>
@@ -74,11 +75,19 @@
 					</div>
 				</div>
 				<div class="concept__info">
-					<h3 class="concept__tag">concept</h3>
+					<h3 class="concept__tag" data-aos="ani-title" data-aos-delay="0">
+						<span data-aos="ani-title" data-aos-delay="400">c</span>
+						<span data-aos="ani-title" data-aos-delay="600">o</span>
+						<span data-aos="ani-title" data-aos-delay="800">n</span>
+						<span data-aos="ani-title" data-aos-delay="1000">c</span>
+						<span data-aos="ani-title" data-aos-delay="1200">e</span>
+						<span data-aos="ani-title" data-aos-delay="1400">p</span>
+						<span data-aos="ani-title" data-aos-delay="1600">t</span>
+					</h3>
 					<h1 class="concept__title">
-						<span>natural</span>
-						<span>skin</span>
-						<span>products</span>
+						<span data-text="natural">natural</span>
+						<span data-text="skin">skin</span>
+						<span data-text="products">products</span>
 					</h1>
 					<p class="concept__content">Sit elit incididunt Lorem minim ea pariatur anim dolor ut veniam amet ad. Ipsum tempor commodo ullamco Lorem incididunt proident nisi nostrud dolore. Et labore minim laboris esse amet eu eu exercitation ea esse velit tempor culpa.</p>
 					<div class="concept__btnGroup">
@@ -91,8 +100,19 @@
 					</div>
 				</div>
 			</section>
-			<section class="collection">
-				<h3 class="collection__title">collection</h3>
+			<section class="collection" id="collection">
+				<h3 class="collection__title">
+					<span>c</span>
+					<span>o</span>
+					<span>l</span>
+					<span>l</span>
+					<span>e</span>
+					<span>c</span>
+					<span>t</span>
+					<span>i</span>
+					<span>o</span>
+					<span>n</span>
+				</h3>
 				<div class="collection__gallery">
 					<div class="gallery__item">
 						<img class="gallery__image" src="./images/gallery-1.jpg" alt="brown box on white table">
@@ -128,8 +148,16 @@
 					</a>
 				</div>
 			</section>
-			<section class="service">
-				<h3 class="service__title">service</h3>
+			<section class="service" id="service">
+				<h3 class="service__title">
+					<span>s</span>
+					<span>e</span>
+					<span>r</span>
+					<span>v</span>
+					<span>i</span>
+					<span>c</span>
+					<span>e</span>
+				</h3>
 				<div class="service__lists">
 					<div class="service__item">
 						<img src="./images/service-1.svg" alt="" class="service__image js-SVGInject">
@@ -153,8 +181,16 @@
 					</div>
 				</div>
 			</section>
-			<section class="marquee">
-				<h3 class="marquee__title">marquee</h3>
+			<section class="marquee" id="marquee">
+				<h3 class="marquee__title">
+					<span>m</span>
+					<span>a</span>
+					<span>r</span>
+					<span>q</span>
+					<span>u</span>
+					<span>e</span>
+					<span>e</span>
+				</h3>
 				<div class="marquee__wrap">
 					<div class="marquee__item">
 						<div class="marquee__group">
@@ -182,14 +218,25 @@
 					</div>
 				</div>
 			</section>
-			<section class="contact">
+			<section class="contact" id="contact">
 				<div class="contact__circle">
 					<img src="./images/cirlce.svg" alt="contact us" class="js-SVGInject">
 				</div>
 				<div class="contact__can">
 					<img src="./images/can.png" alt="can">
 				</div>
-				<h3 class="contact__title">contact us</h3>
+				<h3 class="contact__title">
+					<span>c</span>
+					<span>o</span>
+					<span>n</span>
+					<span>t</span>
+					<span>a</span>
+					<span>c</span>
+					<span>t</span>
+					<span>&ensp:;</span>
+					<span>u</span>
+					<span>s</span>
+				</h3>
 				<a href="JavaScript:;" class="contact__btn">
 					<span class="btn__icon">
 						<div class="btn__image"></div>
@@ -222,6 +269,8 @@
 		</footer>
 		<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 		<script src="https://cdn.jsdelivr.net/npm/walkway.js/src/walkway.min.js"></script>
+		<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
 		<script src="./js/main.js"></script>
 	</body>
 </html>

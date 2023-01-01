@@ -2,6 +2,7 @@
   @include poa(0, 0, 0, b);
   padding: 2.12rem 3.2rem;
   @include flex(row, space-between);
+  transition: opacity 0.6s $ease-inCubic, transform 1.2s $ease-outCubic;
   &__brand {
     @include flex(row, flex-start, flex-start);
     &:hover {
@@ -127,5 +128,12 @@
         transform: translateY(-0.2rem) matrix(-0.34, 0.94, 0.94, 0.34, 0, 0);
       }
     }
+  }
+}
+
+body.is-unOpening {
+  .navbar {
+    opacity: 0;
+    transform: translateY(-60%);
   }
 }
