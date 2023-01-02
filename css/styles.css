@@ -898,10 +898,10 @@ body.is-unOpening .navbar {
     .concept__btn:hover .btn__icon {
       border: 1px solid rgba(255, 255, 255, 0);
       background: #ffffff; }
-    .concept__btn:active .btn__icon, .concept__btn:foucus .btn__icon {
+    .concept__btn:active .btn__icon, .concept__btn:focus .btn__icon {
       border: 1px solid rgba(255, 255, 255, 0);
       background: #f2eee6; }
-      .concept__btn:active .btn__icon::after, .concept__btn:foucus .btn__icon::after {
+      .concept__btn:active .btn__icon::after, .concept__btn:focus .btn__icon::after {
         border: 1px solid #f2eee6; }
     .concept__btn .btn__icon {
       border: 1px solid #ffffff;
@@ -920,7 +920,36 @@ body.is-unOpening .navbar {
       color: #ffffff; }
     .concept__btn .btn__text::after {
       color: #ffffff; }
-
+  .concept__canvas {
+    width: 14rem !important;
+    height: 14rem !important;
+    border-radius: 0;
+    position: absolute;
+    margin: auto;
+    left: 42.67rem;
+    top: 6.07rem;
+    right: auto;
+    bottom: auto;
+    z-index: 5;
+    pointer-events: none;
+    animation: ring-float 3.6s linear infinite alternate;
+    transition: opacity 1.8s 1.2s cubic-bezier(0.32, 0, 0.67, 0), top 1.8s 1.2s cubic-bezier(0.33, 1, 0.68, 1); }
+    @media (max-width: 1024px) {
+      .concept__canvas {
+        width: 5.3rem !important;
+        height: 5.3rem !important;
+        border-radius: 0;
+        position: absolute;
+        margin: auto;
+        left: 3.93rem;
+        top: 10.07rem;
+        right: auto;
+        bottom: auto; } }
+@keyframes ring-float {
+  0% {
+    transform: translateY(0%); }
+  100% {
+    transform: translateY(-15%); } }
 body.is-unOpening .concept__title span::before {
   transform: translateY(170%) rotate(12deg); }
   @media (max-width: 1024px) {
@@ -939,6 +968,9 @@ body.is-unOpening .concept__topImage {
   transform: translateY(-60%);
   opacity: 0;
   filter: blur(3px) brightness(110%); }
+body.is-unOpening .concept__canvas {
+  opacity: 0;
+  top: 0rem; }
 
 .collection {
   margin: 29.2rem auto 0 auto;

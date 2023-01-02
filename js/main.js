@@ -1,27 +1,144 @@
-document.addEventListener("DOMContentLoaded", function () {
-  let swiper_concept = new Swiper(".concept__swiper", {
-    init: false,
-    speed: 600,
-    autoplay: {
-      delay: 6000,
-    },
-    loop: true,
-    followFinger: true,
-    grabCursor: true,
-    observer: true,
-    effect: "creative",
-    creativeEffect: {
-      prev: {
-        shadow: true,
-        translate: ["-20%", 0, -1],
-      },
-      next: {
-        translate: ["100%", 0, 0],
-      },
-    },
-  });
+let scene = null,
+  renderer = null;
+let camera = null;
+let ring = null,
+  pivot = null;
 
-  let swiper_service = new Swiper(".service__swiper", {
+function init3D() {
+  scene = new THREE.Scene();
+  let size = window.innerWidth > 1024 ? 0.14 : 5.33;
+  camera = new THREE.PerspectiveCamera(
+    75,
+    (window.innerWidth * size) / (window.innerWidth * size),
+    0.1,
+    1000
+  );
+  camera.position.z = 1;
+  renderer = new THREE.WebGLRenderer({ alpha: true });
+  renderer.setSize(window.innerWidth * size, window.innerWidth * size);
+  renderer.domElement.classList.add("concept__canvas");
+  document.getElementById("concept").appendChild(renderer.domElement);
+  renderer.setClearColor(0x000000, 0);
+  const light = new THREE.DirectionalLight("#f2eee6", 0.75);
+  const ambient = new THREE.AmbientLight("#f2eee6");
+  light.position.set(0, 0, 100).normalize();
+  scene.add(light);
+  scene.add(ambient);
+  const loader = new THREE.GLTFLoader();
+  loader.load(
+    "../images/ring.glb",
+    function (gltf) {
+      ring = gltf.scene;
+      const box = new THREE.Box3().setFromObject(ring);
+      box.center(ring.position);
+      ring.position.multiplyScalar(-1);
+      pivot = new THREE.Group();
+      pivot.scale.set(12, 12, 12);
+      pivot.rotation.set(-2.5, 3, -2.5);
+      scene.add(pivot);
+      pivot.add(ring);
+    },
+    undefined,
+    function (error) {
+      console.error(error);
+    }
+  );
+
+  animate();
+}
+function animate() {
+  requestAnimationFrame(animate);
+  renderer.render(scene, camera);
+  if (pivot) {
+    pivot.rotation.y += 0.005;
+  }
+}
+
+let swiper_concept = new Swiper(".concept__swiper", {
+  init: false,
+  speed: 600,
+  autoplay: {
+    delay: 6000,
+  },
+  loop: true,
+  followFinger: true,
+  grabCursor: true,
+  observer: true,
+  effect: "creative",
+  creativeEffect: {
+    prev: {
+      shadow: true,
+      translate: ["-20%", 0, -1],
+    },
+    next: {
+      translate: ["100%", 0, 0],
+    },
+  },
+});
+
+function imageLoading() {
+  document.body.classList.add("has-popup");
+  let imgN = 0;
+  const imgID = document.querySelectorAll("img");
+  const line = document.getElementsByClassName("js-loadingLine")[0];
+  imgID.forEach((item) => {
+    const img = new Image();
+    img.src = item.src;
+    img.addEventListener("load", () => {
+      imgN++;
+      line.style.width = (imgN / imgID.length) * 100 + "%";
+      if (imgN == imgID.length) {
+        SVGInject(document.getElementsByClassName("js-SVGInject"));
+      }
+    });
+  });
+}
+
+function opening() {
+  document.body.classList.remove("has-popup");
+  document.getElementsByClassName("js-loading")[0].classList.remove("is-popup");
+  setTimeout(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out-sine",
+      anchorPlacement: "top-bottom",
+      once: true,
+    });
+    setTimeout(() => {
+      document.body.classList.remove("is-unOpening");
+      setTimeout(() => {
+        swiper_concept.init();
+      }, 1200);
+    }, 1200);
+  }, 1800);
+}
+
+let SVGDraw = null;
+const el_service = document.getElementById("service");
+function service_ani() {
+  if (el_service.getBoundingClientRect().top < window.scrollY) {
+    if (el_service.classList.contains("is-unDraw")) {
+      setTimeout(() => {
+        el_service.classList.remove("is-unDraw");
+      }, 1200);
+      setTimeout(() => {
+        const el_svg = document.getElementsByClassName("js-SVGInject");
+        Array.prototype.filter.call(el_svg, (svg) => (svg.style.opacity = 1));
+        SVGDraw.draw(function () {
+          const el_svg = document.getElementsByClassName("js-SVGInject");
+          Array.prototype.filter.call(el_svg, (svg) =>
+            svg.classList.add("is-drawFinish")
+          );
+        });
+      }, 3000);
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  init3D();
+
+  new Swiper(".service__swiper", {
     followFinger: true,
     grabCursor: true,
     observer: true,
@@ -37,11 +154,10 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  let SVGDraw = null;
+  imageLoading();
 
   SVGInject.setOptions({
     afterInject: function (img, svg) {
-      svg.style.opacity = 1;
       opening();
       if (svg.classList.contains("js-SVGInject")) {
         setTimeout(() => {
@@ -60,72 +176,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  imageLoading();
-
-  function imageLoading() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-    document.body.classList.add("has-popup");
-    let imgN = 0;
-    const imgID = document.querySelectorAll("img");
-    const line = document.getElementsByClassName("js-loadingLine")[0];
-    imgID.forEach((item) => {
-      const img = new Image();
-      img.src = item.src;
-      img.addEventListener("load", () => {
-        imgN++;
-        line.style.width = (imgN / imgID.length) * 100 + "%";
-        if (imgN == imgID.length) {
-          SVGInject(document.getElementsByClassName("js-SVGInject"));
-        }
-      });
-    });
-  }
-
-  function opening() {
-    document.body.classList.remove("has-popup");
-    document
-      .getElementsByClassName("js-loading")[0]
-      .classList.remove("is-popup");
-    setTimeout(() => {
-      AOS.init({
-        duration: 1200,
-        easing: "ease-in-out-sine",
-        anchorPlacement: "top-bottom",
-        once: true,
-      });
-      setTimeout(() => {
-        document.body.classList.remove("is-unOpening");
-        setTimeout(() => {
-          swiper_concept.init();
-        }, 1200);
-      }, 1200);
-    }, 1800);
-  }
-
-  const el_service = document.getElementById("service");
   service_ani();
   window.addEventListener("scroll", function () {
     service_ani();
   });
-
-  function service_ani() {
-    if (el_service.getBoundingClientRect().top < window.scrollY) {
-      if (el_service.classList.contains("is-unDraw")) {
-        setTimeout(() => {
-          el_service.classList.remove("is-unDraw");
-        }, 1200);
-        setTimeout(() => {
-          SVGDraw.draw(function () {
-            const el_svg = document.getElementsByClassName("js-SVGInject");
-            Array.prototype.filter.call(el_svg, (svg) =>
-              svg.classList.add("is-drawFinish")
-            );
-          });
-        }, 3000);
-      }
-    }
-  }
 });

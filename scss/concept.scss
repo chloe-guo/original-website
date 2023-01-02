@@ -226,6 +226,26 @@
       }
     }
   }
+  &__canvas {
+    @include rect(14rem !important, 14rem !important);
+    @include poa(42.67rem, 6.07rem, r, b);
+    z-index: 5;
+    pointer-events: none;
+    animation: ring-float 3.6s linear infinite alternate;
+    transition: opacity 1.8s 1.2s $ease-inCubic, top 1.8s 1.2s $ease-outCubic;
+    @media (max-width: $md) {
+      @include rect(5.3rem !important, 5.3rem !important);
+      @include poa(3.93rem, 10.07rem, r, b);
+    }
+    @keyframes ring-float {
+      0% {
+        transform: translateY(0%);
+      }
+      100% {
+        transform: translateY(-15%);
+      }
+    }
+  }
 }
 
 body.is-unOpening {
@@ -256,6 +276,10 @@ body.is-unOpening {
       transform: translateY(-60%);
       opacity: 0;
       filter: blur(3px) brightness(110%);
+    }
+    &__canvas {
+      opacity: 0;
+      top: 0rem;
     }
   }
 }
