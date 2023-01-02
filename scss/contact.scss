@@ -3,7 +3,6 @@
   @include rect(100%, 49.67rem);
   @include flex(row, space-between, center);
   padding: 0 8.33rem 0 8rem;
-  overflow: hidden;
   @media (max-width: $md) {
     @include rect(100%, 33.33rem);
     @include flex(column, flex-start, flex-start);

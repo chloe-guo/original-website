@@ -1,6 +1,5 @@
 .marquee {
   @include rect(100%, auto);
-  overflow: hidden;
   margin: 4.67rem auto 0 auto;
   padding-bottom: 13.27rem;
   @media (max-width: $md) {

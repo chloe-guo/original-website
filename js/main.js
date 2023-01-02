@@ -40,6 +40,8 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
+  let SVGDraw = null;
+
   SVGInject.setOptions({
     afterInject: function (img, svg) {
       svg.style.opacity = 1;
@@ -52,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
             (path) => (path.style.opacity = 1)
           );
         }, 1200);
-        let SVGDraw = new Walkway({
+        SVGDraw = new Walkway({
           selector: ".js-SVGInject",
           duration: "3600",
           easing: "cubic-bezier(0.11, 0, 0.5, 0)",
@@ -120,7 +122,10 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1200);
         setTimeout(() => {
           SVGDraw.draw(function () {
-            svg.classList.add("is-drawFinish");
+            const el_svg = document.getElementsByClassName("js-SVGInject");
+            Array.prototype.filter.call(el_svg, (svg) =>
+              svg.classList.add("is-drawFinish")
+            );
           });
         }, 3000);
       }

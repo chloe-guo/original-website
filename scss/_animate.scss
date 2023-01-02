@@ -37,6 +37,7 @@
   transition-timing-function: $ease-inCubic, $ease-outCubic !important;
   @media (max-width: $md) {
     transform: translateX(60%);
+    transition-delay: 0s, 0s;
   }
   &.aos-animate {
     opacity: 1;
@@ -51,7 +52,8 @@
   transition-delay: 0.8s, 0.8s;
   transition-timing-function: $ease-inCubic, $ease-outCubic !important;
   @media (max-width: $md) {
-    transform: translateX(-60%);
+    transform: translateX(60%);
+    transition-delay: 0s, 0s;
   }
   &.aos-animate {
     opacity: 1;
@@ -67,6 +69,7 @@
   transition-timing-function: $ease-inCubic, $ease-outCubic !important;
   @media (max-width: $md) {
     transform: translateX(-60%);
+    transition-delay: 0s, 0s;
   }
   &.aos-animate {
     opacity: 1;
@@ -81,7 +84,8 @@
   transition-delay: 0.8s, 0.8s;
   transition-timing-function: $ease-inCubic, $ease-outCubic !important;
   @media (max-width: $md) {
-    transform: translateX(60%);
+    transform: translateX(-60%);
+    transition-delay: 0s, 0s;
   }
   &.aos-animate {
     opacity: 1;

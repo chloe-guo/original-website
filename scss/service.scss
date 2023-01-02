@@ -1,6 +1,5 @@
 .service {
   margin: 10.53rem auto 0 auto;
-  overflow: hidden;
   @media (max-width: $md) {
     margin: 8rem auto 0 auto;
   }
@@ -113,7 +112,7 @@
     path {
       transition: fill 0.6s 0.6s $ease-outQuad, stroke 0.6s $ease-outQuad;
       &.is-bgLine {
-        opacity: 0;
+        opacity: 0 !important;
         fill: $c-primary1;
         transition: opacity 0.6s $ease-outQuad, fill 0.6s 0.6s $ease-outQuad;
       }
@@ -122,9 +121,10 @@
       }
     }
     &.is-drawFinish {
-      opacity: 1;
+      opacity: 1 !important;
       path {
         &.is-bgLine {
+          opacity: 1 !important;
           fill: $c-primary0;
         }
         &.is-stroke {
