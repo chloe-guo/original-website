@@ -55,6 +55,7 @@
             color: $c-primary1;
             @include poa(0, 0, r, b);
             transform: translateY(160%) rotate(12deg);
+            opacity: 0;
             @media (max-width: $md) {
               transform: translateY(160%) rotate(6deg);
             }
@@ -83,6 +84,7 @@
             span {
               &::before {
                 transform: translateY(0%) rotate(0deg);
+                opacity: 1;
               }
             }
           }
@@ -135,6 +137,7 @@
         color: $c-white;
         @include poa(0, 0, r, b);
         transform: translateY(12%) rotate(0deg);
+        opacity: 1;
       }
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
@@ -264,6 +267,7 @@ body.is-unOpening {
       span {
         &::before {
           transform: translateY(170%) rotate(12deg);
+          opacity: 0;
           @media (max-width: $md) {
             transform: translateY(200%) rotate(6deg);
           }

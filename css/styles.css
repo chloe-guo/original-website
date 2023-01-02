@@ -560,7 +560,8 @@ body.is-unOpening .navbar {
           top: 0;
           right: auto;
           bottom: auto;
-          transform: translateY(160%) rotate(12deg); }
+          transform: translateY(160%) rotate(12deg);
+          opacity: 0; }
           @media (max-width: 1024px) {
             .concept__swiper .slide__text span::before {
               transform: translateY(160%) rotate(6deg); } }
@@ -583,7 +584,8 @@ body.is-unOpening .navbar {
       transform: scale(1);
       filter: blur(0rem); }
     .concept__swiper .swiper-slide-active .slide__text span::before {
-      transform: translateY(0%) rotate(0deg); }
+      transform: translateY(0%) rotate(0deg);
+      opacity: 1; }
   .concept__info {
     width: 32.4rem;
     height: auto;
@@ -699,7 +701,8 @@ body.is-unOpening .navbar {
         top: 0;
         right: auto;
         bottom: auto;
-        transform: translateY(12%) rotate(0deg); }
+        transform: translateY(12%) rotate(0deg);
+        opacity: 1; }
       .concept__title span:nth-child(1) {
         transform: translateY(0rem); }
         @media (max-width: 1024px) {
@@ -957,7 +960,8 @@ body.is-unOpening .navbar {
   100% {
     transform: translateY(-15%); } }
 body.is-unOpening .concept__title span::before {
-  transform: translateY(170%) rotate(12deg); }
+  transform: translateY(170%) rotate(12deg);
+  opacity: 0; }
   @media (max-width: 1024px) {
     body.is-unOpening .concept__title span::before {
       transform: translateY(200%) rotate(6deg); } }
@@ -1611,7 +1615,8 @@ body.is-unOpening .concept__canvas {
         top: 0;
         right: auto;
         bottom: auto;
-        transform: translateY(0%) rotate(0deg); }
+        transform: translateY(0%) rotate(0deg);
+        opacity: 1; }
       .service__info .info__title span:nth-child(1)::before {
         transition: all 0.6s 1.8s cubic-bezier(0.33, 1, 0.68, 1); }
       .service__info .info__title span:nth-child(2)::before {
@@ -1649,7 +1654,8 @@ body.is-unOpening .concept__canvas {
       .service svg.is-drawFinish path.is-stroke {
         stroke: #d68f4c; }
   .service .is-unDraw .service__info .info__title span::before {
-    transform: translateY(120%) rotate(6deg); }
+    transform: translateY(120%) rotate(6deg);
+    opacity: 0; }
   .service .is-unDraw .service__info .info__content {
     opacity: 0;
     transform: translateY(200%); }

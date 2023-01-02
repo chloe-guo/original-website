@@ -85,6 +85,7 @@
             color: $c-gray1;
             @include poa(0, 0, r, b);
             transform: translateY(0%) rotate(0deg);
+            opacity: 1;
           }
           @for $i from 1 through 2 {
             &:nth-child(#{$i}) {
@@ -141,6 +142,7 @@
             span {
               &::before {
                 transform: translateY(120%) rotate(6deg);
+                opacity: 0;
               }
             }
           }
