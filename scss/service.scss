@@ -1,21 +1,35 @@
 .service {
   margin: 10.53rem auto 0 auto;
+  @media (max-width: $md) {
+    margin: 8rem auto 0 auto;
+  }
   &__title {
     @include section-title;
     @include rect(80rem, auto);
     margin: auto;
+    @media (max-width: $md) {
+      @include rect(calc(100vw - 3.2rem), auto);
+    }
   }
   &__lists {
     @include rect(100%, auto);
-    @include flex(row, center, stretch);
+    @include flex(row, flex-start, stretch);
     margin: 3.73rem 0 0 0;
     border-top: 1px solid $c-black-op01;
     border-bottom: 1px solid $c-black-op01;
+    @media (max-width: $md) {
+      margin: 1.6rem 0 0 0;
+    }
   }
   &__item {
     @include rect(50%, auto);
     padding: 2.67rem 2.67rem 5.73rem 2.67rem;
     flex: 0 0 50%;
+    @media (max-width: $md) {
+      @include rect(calc(100vw - 3.2rem), auto);
+      padding: 1.6rem;
+      flex: 0 0 calc(100vw - 3.2rem);
+    }
     & + .service__item {
       border-left: 1px solid $c-black-op01;
     }
@@ -29,6 +43,12 @@
         margin-top: 2.87rem;
         margin-bottom: 4.87rem;
         margin-left: 4.8rem;
+        @media (max-width: $md) {
+          @include rect(7.73em, 9.13rem);
+          margin-top: 1.67rem;
+          margin-bottom: 2.51rem;
+          margin-left: 4.93rem;
+        }
       }
     }
     &:nth-child(2n) {
@@ -37,6 +57,11 @@
         @include rect(7.8rem, 10.4rem);
         margin-top: 7.87rem;
         margin-left: 5.47rem;
+        @media (max-width: $md) {
+          @include rect(6.6rem, 8.8rem);
+          margin-top: 3.53rem;
+          margin-left: 5.6rem;
+        }
       }
     }
   }
@@ -50,6 +75,9 @@
         span {
           @include rect(100%, 2.27rem);
           overflow: hidden;
+          @media (max-width: $md) {
+            @include rect(100%, 1.91rem);
+          }
           &::before {
             @include beaf(attr(data-text));
             color: $c-gray1;
@@ -71,6 +99,9 @@
         margin-top: 1.06rem;
         transition: opacity 1.2s 1.8s $ease-inCubic,
           transform 1.2s 1.8s $ease-outCubic;
+        @media (max-width: $md) {
+          margin-top: 1.06rem;
+        }
       }
     }
   }
