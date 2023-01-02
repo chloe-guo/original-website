@@ -1,6 +1,7 @@
 .collection {
   margin: 29.2rem auto 0 auto;
   @include rect(80rem, auto);
+  overflow-x: hidden;
   @media (max-width: $md) {
     margin: 8rem 1.6rem 0 1.6rem;
     @include rect(calc(100% - 3.2rem), auto);
