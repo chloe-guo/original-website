@@ -94,6 +94,12 @@
         &:hover {
           background: $c-primary2;
         }
+        &:active {
+          background: $c-primary0;
+          &::after {
+            border: 1px solid $c-primary0;
+          }
+        }
       }
       &__linkText {
         @include font-body-2;
@@ -128,6 +134,22 @@
         &__icon {
           border: 1px solid rgba($c-black, 0);
           background: $c-primary2;
+        }
+      }
+    }
+    &:active {
+      .btn {
+        &__icon {
+          border: 1px solid rgba($c-black, 0);
+          background: $c-primary0;
+          &::after {
+            border: 1px solid $c-primary0;
+          }
+        }
+        &__text {
+          &::after {
+            color: $c-primary0;
+          }
         }
       }
     }

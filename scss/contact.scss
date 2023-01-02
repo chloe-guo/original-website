@@ -33,6 +33,16 @@
         }
       }
     }
+    &:active {
+      .btn {
+        &__icon {
+          background: $c-primary0;
+          &::after {
+            border: 1px solid $c-primary0;
+          }
+        }
+      }
+    }
     .btn {
       &__icon {
         background: $c-primary1;
