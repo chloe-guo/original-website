@@ -93,9 +93,14 @@
         }
         &:hover {
           background: $c-primary2;
+          @media (max-width: $md) {
+            background: $c-primary0;
+            &::after {
+              border: 1px solid $c-primary0;
+            }
+          }
         }
-        &:active,
-        &:focus {
+        &:active {
           background: $c-primary0;
           &::after {
             border: 1px solid $c-primary0;
@@ -137,9 +142,24 @@
           background: $c-primary2;
         }
       }
+      @media (max-width: $md) {
+        .btn {
+          &__icon {
+            border: 1px solid rgba($c-black, 0);
+            background: $c-primary0;
+            &::after {
+              border: 1px solid $c-primary0;
+            }
+          }
+          &__text {
+            &::after {
+              color: $c-primary0;
+            }
+          }
+        }
+      }
     }
-    &:active,
-    &:focus {
+    &:active {
       .btn {
         &__icon {
           border: 1px solid rgba($c-black, 0);

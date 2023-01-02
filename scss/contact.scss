@@ -31,9 +31,18 @@
           background: $c-primary2;
         }
       }
+      @media (max-width: $md) {
+        .btn {
+          &__icon {
+            background: $c-primary0;
+            &::after {
+              border: 1px solid $c-primary0;
+            }
+          }
+        }
+      }
     }
-    &:active,
-    &:focus {
+    &:active {
       .btn {
         &__icon {
           background: $c-primary0;

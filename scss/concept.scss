@@ -185,9 +185,19 @@
           background: $c-white;
         }
       }
+      @media (max-width: $md) {
+        .btn {
+          &__icon {
+            border: 1px solid rgba($c-white, 0);
+            background: $c-primary3;
+            &::after {
+              border: 1px solid $c-primary3;
+            }
+          }
+        }
+      }
     }
-    &:active,
-    &:focus {
+    &:active {
       .btn {
         &__icon {
           border: 1px solid rgba($c-white, 0);
