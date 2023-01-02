@@ -117,8 +117,8 @@
     @include flex(column, flex-start, flex-start);
     transform: translateY(-0.87rem);
     @media (max-width: $md) {
-      @include poa(l, -9.63rem, -0.7rem, b);
-      @include rect(14rem, auto);
+      @include poa(l, -9.63rem, 0, b);
+      @include rect(15rem, auto);
       transform: translateY(-100%);
     }
     span {

@@ -4,6 +4,11 @@
   @include flex(row, space-between, center);
   padding: 0 8.33rem 0 8rem;
   overflow: hidden;
+  @media (max-width: $md) {
+    @include rect(100%, 33.33rem);
+    @include flex(column, flex-start, flex-start);
+    padding: 3.57rem 2.47rem 0 2.47rem;
+  }
   &__title {
     @include section-title($c-primary0);
   }
@@ -12,12 +17,15 @@
     @include flex(row, flex-start, center);
     @include ani-icon-btn(
       9.6rem,
-      9.6rem,
+      6.93rem,
       ripple-big,
       "../images/mail.svg",
       "n"
     );
     @include poa;
+    @media (max-width: $md) {
+      @include circle(6.93rem);
+    }
     &:hover {
       .btn {
         &__icon {
@@ -38,6 +46,9 @@
       }
       &__image {
         @include rect(2.33rem, 1.67rem);
+        @media (max-width: $md) {
+          @include rect(1.87rem, 1.33rem);
+        }
         &::before {
           background: $c-white;
         }
@@ -58,11 +69,18 @@
   &__line {
     @include rect(20.47rem, 0);
     border-top: 1px solid $c-primary0;
+    @media (max-width: $md) {
+      display: none;
+    }
   }
   &__circle {
     @include circle(46.13rem);
     @include poa;
     transform: translate(3.5%, 14%);
+    @media (max-width: $md) {
+      @include circle(26rem);
+      transform: translate(-3%, 32%);
+    }
     svg {
       @include rect(100%, auto);
     }
@@ -70,5 +88,9 @@
   &__can {
     @include img(auto, 49.33rem);
     @include poa;
+    @media (max-width: $md) {
+      @include img(auto, 28.4rem);
+      @include poa(0.6rem, 1.6rem, 0, 0);
+    }
   }
 }
