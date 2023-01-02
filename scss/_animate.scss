@@ -28,15 +28,15 @@
   }
 }
 
-[data-aos="ani-fade-left"] {
+[data-aos="ani-fade-right"] {
   opacity: 0;
-  transform: translateX(60%);
+  transform: translateX(-60%);
   transition-property: opacity, transform;
   transition-duration: 1.6s, 1.6s !important;
   transition-delay: 1s, 1s;
   transition-timing-function: $ease-inCubic, $ease-outCubic !important;
   @media (max-width: $md) {
-    transform: translateX(60%);
+    transform: translateX(-60%);
     transition-delay: 0s, 0s;
   }
   &.aos-animate {
@@ -60,9 +60,9 @@
     transform: translate(0%);
   }
 }
-[data-aos="ani-fade-right"] {
+[data-aos="ani-fade-left"] {
   opacity: 0;
-  transform: translateX(-60%);
+  transform: translateX(60%);
   transition-property: opacity, transform;
   transition-duration: 1.6s, 1.6s !important;
   transition-delay: 1s, 1s;
@@ -84,7 +84,7 @@
   transition-delay: 0.8s, 0.8s;
   transition-timing-function: $ease-inCubic, $ease-outCubic !important;
   @media (max-width: $md) {
-    transform: translateX(-60%);
+    transform: translateX(60%);
     transition-delay: 0s, 0s;
   }
   &.aos-animate {
