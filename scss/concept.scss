@@ -55,6 +55,9 @@
             color: $c-primary1;
             @include poa(0, 0, r, b);
             transform: translateY(150%) rotate(12deg);
+            @media (max-width: $md) {
+              transform: translateY(150%) rotate(6deg);
+            }
           }
           @for $i from 1 through 3 {
             &:nth-child(#{$i}) {

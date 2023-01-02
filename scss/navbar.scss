@@ -13,6 +13,9 @@
       .brand__registered {
         &::before {
           transform: translateY(-120%) rotate(-12deg);
+          @media (max-width: $md) {
+            transform: translateY(-120%) rotate(-6deg);
+          }
         }
         &::after {
           transform: translateY(0) rotate(0deg);
@@ -38,6 +41,9 @@
           background: $c-primary0;
           transform: translateY(120%) rotate(12deg);
           transition: all 0.6s $ease-outCubic;
+          @media (max-width: $md) {
+            transform: translateY(120%) rotate(6deg);
+          }
         }
       }
       &__original {
@@ -132,6 +138,9 @@
           .nav__icon {
             &::before {
               transform: translateY(-150%) rotate(-12deg);
+              @media (max-width: $md) {
+                transform: translateY(-150%) rotate(6deg);
+              }
             }
             &::after {
               transform: translateY(0) rotate(0deg);
@@ -161,6 +170,9 @@
           background: $c-primary0;
           transform: translateY(150%) rotate(12deg);
           transition: all 0.6s $ease-outCubic;
+          @media (max-width: $md) {
+            transform: translateY(150%) rotate(6deg);
+          }
         }
       }
       &__line {

@@ -249,10 +249,16 @@
   &::after {
     transform: translateY(150%) rotate(12deg);
     transition: all 0.6s $ease-outCubic;
+    @media (max-width: $md) {
+      transform: translateY(150%) rotate(6deg);
+    }
   }
   &:hover {
     &::before {
       transform: translateY(-150%) rotate(-12deg);
+      @media (max-width: $md) {
+        transform: translateY(-150%) rotate(-6deg);
+      }
     }
     &::after {
       transform: translateY(0) rotate(0deg);
@@ -287,6 +293,9 @@
     &::after {
       transform: translateY(150%) rotate(12deg);
       transition: all 0.6s $ease-outCubic;
+      @media (max-width: $md) {
+        transform: translateY(150%) rotate(6deg);
+      }
     }
   }
 
@@ -300,6 +309,9 @@
     .btn__text {
       &::before {
         transform: translateY(-150%) rotate(-12deg);
+        @media (max-width: $md) {
+          transform: translateY(-150%) rotate(-6deg);
+        }
       }
       &::after {
         transform: translateY(0) rotate(0deg);
@@ -332,8 +344,14 @@
           opacity: 0;
           @if ($icon == "../images/arrow.svg") {
             transform: translate(25%, -25%) rotate(-12deg);
+            @media (max-width: $md) {
+              transform: translate(25%, -25%) rotate(-6deg);
+            }
           } @else {
             transform: translateY(-50%) rotate(-12deg);
+            @media (max-width: $md) {
+              transform: translateY(-50%) rotate(-6deg);
+            }
           }
         }
         &::after {
@@ -345,6 +363,9 @@
         &__text {
           &::before {
             transform: translateY(-150%) rotate(-12deg);
+            @media (max-width: $md) {
+              transform: translateY(-150%) rotate(-6deg);
+            }
           }
           &::after {
             transform: translateY(0) rotate(0deg);
@@ -393,8 +414,14 @@
         opacity: 0;
         @if ($icon == "../images/arrow.svg") {
           transform: translate(-25%, 25%) rotate(12deg);
+          @media (max-width: $md) {
+            transform: translate(-25%, 25%) rotate(6deg);
+          }
         } @else {
           transform: translateY(50%) rotate(12deg);
+          @media (max-width: $md) {
+            transform: translateY(50%) rotate(6deg);
+          }
         }
         transition: all 0.6s $ease-outCubic;
       }
@@ -421,6 +448,9 @@
         &::after {
           transform: translateY(150%) rotate(12deg);
           transition: all 0.6s $ease-outCubic;
+          @media (max-width: $md) {
+            transform: translateY(150%) rotate(6deg);
+          }
         }
       }
     }
