@@ -12,8 +12,8 @@
     @include rect(100%, auto);
     @include flex(column, flex-start, flex-start);
     margin: 6.53rem 0 0 0;
-    border-top: 0.07rem solid $c-black-op01;
-    border-bottom: 0.07rem solid $c-black-op01;
+    border-top: 1px solid $c-black-op01;
+    border-bottom: 1px solid $c-black-op01;
   }
   &__item {
     @include font-display-1;
@@ -22,7 +22,7 @@
     @include flex(row, flex-start, flex-start);
     padding: 0.53rem 0;
     & + .marquee__item {
-      border-top: 0.07rem solid $c-black-op01;
+      border-top: 1px solid $c-black-op01;
     }
     &:nth-child(2n + 1) {
       animation: marquee 12s linear infinite;
@@ -50,7 +50,7 @@
       &::before {
         @include beaf;
         @include rect(0, 6.4rem);
-        border-left: 0.07rem solid $c-primary2;
+        border-left: 1px solid $c-primary2;
         transform: translateY(-12%) rotate(20deg);
         @include poa(0, 0, r, 0);
       }

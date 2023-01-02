@@ -310,6 +310,7 @@
 
 @mixin ani-icon-btn(
   $size: 4.27rem,
+  $size-m: 3.2rem,
   $ani: ripple,
   $icon: "../images/arrow.svg",
   $text: "y"
@@ -358,6 +359,9 @@
       @include flex;
       background: rgba($c-white, 0);
       transition: all 0.6s $ease-outCubic;
+      @media (max-width: $md) {
+        @include circle($size-m);
+      }
       &::before,
       &::after {
         @include beaf;
@@ -365,6 +369,9 @@
         @include poa(50%, 50%, r, b);
         transform: translate(-50%, -50%);
         opacity: 0;
+        @media (max-width: $md) {
+          @include circle($size-m);
+        }
       }
     }
     &__image {
@@ -398,6 +405,10 @@
         @include rect(auto, 1.73rem);
         color: transparent;
         overflow: hidden;
+        @media (max-width: $md) {
+          margin-left: 0.8rem;
+          @include rect(auto, 1.3rem);
+        }
         &::before,
         &::after {
           @include beaf(attr(data-text));
@@ -452,7 +463,11 @@
   &::before {
     @include beaf;
     @include rect(1.6rem, 0);
-    border-top: 0.07rem solid $c;
+    border-top: 1px solid $c;
     transform: translate(-0.27rem, -0.2rem) rotate(110deg);
+    @media (max-width: $md) {
+      transform: translate(-0.14rem, -0.2rem) rotate(110deg);
+      @include rect(1rem, 0);
+    }
   }
 }

@@ -140,7 +140,7 @@
       }
       &__line {
         @include rect(1.6rem, 0);
-        border-top: 0.07rem solid $c-primary1;
+        border-top: 1px solid $c-primary1;
         transform: translateY(-0.2rem) matrix(-0.34, 0.94, 0.94, 0.34, 0, 0);
       }
     }

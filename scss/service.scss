@@ -9,15 +9,15 @@
     @include rect(100%, auto);
     @include flex(row, center, stretch);
     margin: 3.73rem 0 0 0;
-    border-top: 0.07rem solid $c-black-op01;
-    border-bottom: 0.07rem solid $c-black-op01;
+    border-top: 1px solid $c-black-op01;
+    border-bottom: 1px solid $c-black-op01;
   }
   &__item {
     @include rect(50%, auto);
     padding: 2.67rem 2.67rem 5.73rem 2.67rem;
     flex: 0 0 50%;
     & + .service__item {
-      border-left: 0.07rem solid $c-black-op01;
+      border-left: 1px solid $c-black-op01;
     }
     svg {
       @include rect;

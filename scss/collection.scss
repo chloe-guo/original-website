@@ -45,7 +45,7 @@
         }
         &:nth-child(4) {
           > div {
-            @include img(18.8rem, 20.07rem);
+            @include img(18.8rem, 21px);
           }
         }
       }
@@ -57,10 +57,10 @@
         @include ani-text-btn(1.3rem);
         box-shadow: 0 0.27rem 2.13rem -0.53rem $c-shadow;
         &::before {
-          border: 0.07rem solid $c-primary4;
+          border: 1px solid $c-primary4;
         }
         &::after {
-          border: 0.07rem solid $c-primary2;
+          border: 1px solid $c-primary2;
         }
         &:hover {
           background: $c-primary2;
@@ -92,20 +92,20 @@
     &:hover {
       .btn {
         &__icon {
-          border: 0.07rem solid rgba($c-black, 0);
+          border: 1px solid rgba($c-black, 0);
           background: $c-primary2;
         }
       }
     }
     .btn {
       &__icon {
-        border: 0.07rem solid $c-black-op03;
+        border: 1px solid $c-black-op03;
         background: rgba($c-primary2, 0);
         &::before {
-          border: 0.07rem solid $c-black-op03;
+          border: 1px solid $c-black-op03;
         }
         &::after {
-          border: 0.07rem solid $c-primary2;
+          border: 1px solid $c-primary2;
         }
       }
       &__image {

@@ -74,7 +74,7 @@
           &::before {
             @include beaf;
             @include rect(0, 16px);
-            border-left: 0.07rem solid $c-black-op03;
+            border-left: 1px solid $c-black-op03;
             transform: translateY(-15%) rotateZ(20deg);
             @include poa(-1rem, 0, r, 0);
           }

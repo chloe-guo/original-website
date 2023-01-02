@@ -10,7 +10,13 @@
   &__btn {
     @include circle(9.6rem);
     @include flex(row, flex-start, center);
-    @include ani-icon-btn(9.6rem, ripple-big, "../images/mail.svg", "n");
+    @include ani-icon-btn(
+      9.6rem,
+      9.6rem,
+      ripple-big,
+      "../images/mail.svg",
+      "n"
+    );
     @include poa;
     &:hover {
       .btn {
@@ -24,10 +30,10 @@
         background: $c-primary1;
         box-shadow: 0 0.27rem 2.13rem -0.53rem $c-shadow;
         &::before {
-          border: 0.07rem solid $c-primary1;
+          border: 1px solid $c-primary1;
         }
         &::after {
-          border: 0.07rem solid $c-primary2;
+          border: 1px solid $c-primary2;
         }
       }
       &__image {
@@ -51,7 +57,7 @@
   }
   &__line {
     @include rect(20.47rem, 0);
-    border-top: 0.07rem solid $c-primary0;
+    border-top: 1px solid $c-primary0;
   }
   &__circle {
     @include circle(46.13rem);

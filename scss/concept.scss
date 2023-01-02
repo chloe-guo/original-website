@@ -2,11 +2,18 @@
   background: $c-primary1;
   padding-top: 3.87rem;
   @include flex(row, flex-start, flex-start);
+  @media (max-width: $md) {
+    padding-top: 7.93rem;
+    @include flex(column, flex-start, flex-start);
+  }
   &__topImage {
     @include img(28rem, auto);
     @include poa(l, 0, 0, b);
     transition: opacity 1.2s 1.2s $ease-inCubic, filter 0.6s 1.2s $ease-inCubic,
       transform 1.2s 1.2s $ease-outCubic;
+    @media (max-width: $md) {
+      @include img(10.53rem, auto);
+    }
   }
   &__swiper {
     flex: 0 0 47.2rem;
@@ -15,6 +22,11 @@
     margin: 0;
     transition: opacity 0.6s 1.2s $ease-inCubic,
       transform 1.8s 1.2s $ease-outCubic;
+    @media (max-width: $md) {
+      flex: 0 0 27.8rem;
+      @include rect(20.33rem, 27.8rem);
+      transform: translateY(0rem);
+    }
     .slide {
       &__image {
         @include img(100%, auto);
@@ -29,6 +41,9 @@
         mix-blend-mode: overlay;
         @include poa(4.8rem, t, 4.8rem, 2.27rem);
         @include flex(column, flex-start, flex-start);
+        @media (max-width: $md) {
+          display: none;
+        }
         span {
           @include rect(100%, 9.73rem);
           overflow: hidden;
@@ -45,6 +60,9 @@
             &:nth-child(#{$i}) {
               &::before {
                 transition: all 0.6s ($i - 1 + 12) * 0.05s $ease-outCubic;
+                @media (max-width: $md) {
+                  transition: none;
+                }
               }
             }
           }
@@ -74,12 +92,22 @@
     @include flex(column, flex-start, flex-end);
     margin-left: 8.4rem;
     margin-top: 19.73rem;
+    @media (max-width: $md) {
+      @include rect(calc(100vw - 3.2rem), auto);
+      margin: 0 auto;
+      padding-top: 1.6rem;
+      z-index: 5;
+    }
   }
   &__tag {
     @include section-title($c-white);
     transform-origin: left top;
     transform: translateY(-0.8rem) rotate(90deg);
     @include poa(-4.67rem, 0, r, b);
+    @media (max-width: $md) {
+      transform: translateX(1rem) rotate(90deg);
+      @include poa(0, -20.63rem, r, b);
+    }
   }
   &__title {
     @include font-heading-1;
@@ -88,9 +116,17 @@
     @include rect(32.4rem, auto);
     @include flex(column, flex-start, flex-start);
     transform: translateY(-0.87rem);
+    @media (max-width: $md) {
+      @include poa(l, -9.63rem, -0.7rem, b);
+      @include rect(14rem, auto);
+      transform: translateY(-100%);
+    }
     span {
       @include rect(100%, 6.4rem);
       overflow: hidden;
+      @media (max-width: $md) {
+        @include rect(100%, 3.73rem);
+      }
       &::before {
         @include beaf(attr(data-text));
         color: $c-white;
@@ -115,8 +151,8 @@
     transition: opacity 1.2s 1.2s $ease-inCubic,
       transform 1.2s 1.2s $ease-outCubic;
     @media (max-width: $md) {
-      margin-top: calc(-0.87rem * 3 + 4.27rem);
-      @include rect(26rem, auto);
+      margin-top: 0;
+      @include rect(100%, auto);
     }
   }
   &__btnGroup {
@@ -128,7 +164,9 @@
     transition: opacity 1.2s 1.4s $ease-inCubic,
       transform 1.2s 1.4s $ease-outCubic;
     @media (max-width: $md) {
-      @include rect(26rem, auto);
+      @include rect(100%, auto);
+      margin-top: 2.13rem;
+      margin-bottom: 2.67rem;
     }
   }
   &__btn {
@@ -137,18 +175,18 @@
     &:hover {
       .btn {
         &__icon {
-          border: 0.07rem solid rgba($c-white, 0);
+          border: 1px solid rgba($c-white, 0);
           background: $c-white;
         }
       }
     }
     .btn {
       &__icon {
-        border: 0.07rem solid $c-white;
+        border: 1px solid $c-white;
         background: rgba($c-white, 0);
         &::before,
         &::after {
-          border: 0.07rem solid $c-white;
+          border: 1px solid $c-white;
         }
       }
       &__image {
@@ -178,6 +216,9 @@ body.is-unOpening {
       span {
         &::before {
           transform: translateY(170%) rotate(12deg);
+          @media (max-width: $md) {
+            transform: translateY(200%) rotate(6deg);
+          }
         }
       }
     }
