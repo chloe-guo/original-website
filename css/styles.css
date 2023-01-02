@@ -364,16 +364,16 @@ html img.js-SVGInject {
         transform: translateY(0%) rotate(0deg);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
       .navbar__nav .nav__link::after {
-        transform: translateY(150%) rotate(12deg);
+        transform: translateY(160%) rotate(12deg);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
         @media (max-width: 1024px) {
           .navbar__nav .nav__link::after {
-            transform: translateY(150%) rotate(6deg); } }
+            transform: translateY(160%) rotate(6deg); } }
       .navbar__nav .nav__link:hover::before {
-        transform: translateY(-150%) rotate(-12deg); }
+        transform: translateY(-160%) rotate(-12deg); }
         @media (max-width: 1024px) {
           .navbar__nav .nav__link:hover::before {
-            transform: translateY(-150%) rotate(-6deg); } }
+            transform: translateY(-160%) rotate(-6deg); } }
       .navbar__nav .nav__link:hover::after {
         transform: translateY(0) rotate(0deg); }
       .navbar__nav .nav__link::before {
@@ -381,10 +381,10 @@ html img.js-SVGInject {
       .navbar__nav .nav__link::after {
         color: #d68f4c; }
       .navbar__nav .nav__link:hover .nav__icon::before {
-        transform: translateY(-150%) rotate(-12deg); }
+        transform: translateY(-160%) rotate(-12deg); }
         @media (max-width: 1024px) {
           .navbar__nav .nav__link:hover .nav__icon::before {
-            transform: translateY(-150%) rotate(6deg); } }
+            transform: translateY(-160%) rotate(6deg); } }
       .navbar__nav .nav__link:hover .nav__icon::after {
         transform: translateY(0) rotate(0deg); }
     .navbar__nav .nav__icon {
@@ -419,11 +419,11 @@ html img.js-SVGInject {
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
       .navbar__nav .nav__icon::after {
         background: #d68f4c;
-        transform: translateY(150%) rotate(12deg);
+        transform: translateY(160%) rotate(12deg);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
         @media (max-width: 1024px) {
           .navbar__nav .nav__icon::after {
-            transform: translateY(150%) rotate(6deg); } }
+            transform: translateY(160%) rotate(6deg); } }
     .navbar__nav .nav__line {
       width: 1.6rem;
       height: 0;
@@ -560,10 +560,10 @@ body.is-unOpening .navbar {
           top: 0;
           right: auto;
           bottom: auto;
-          transform: translateY(150%) rotate(12deg); }
+          transform: translateY(160%) rotate(12deg); }
           @media (max-width: 1024px) {
             .concept__swiper .slide__text span::before {
-              transform: translateY(150%) rotate(6deg); } }
+              transform: translateY(160%) rotate(6deg); } }
         .concept__swiper .slide__text span:nth-child(1)::before {
           transition: all 0.6s 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
           @media (max-width: 1024px) {
@@ -793,10 +793,10 @@ body.is-unOpening .navbar {
       opacity: 1;
       transform: translate(0%, 0%) rotate(0deg); }
     .concept__btn:hover .btn__text::before {
-      transform: translateY(-150%) rotate(-12deg); }
+      transform: translateY(-160%) rotate(-12deg); }
       @media (max-width: 1024px) {
         .concept__btn:hover .btn__text::before {
-          transform: translateY(-150%) rotate(-6deg); } }
+          transform: translateY(-160%) rotate(-6deg); } }
     .concept__btn:hover .btn__text::after {
       transform: translateY(0) rotate(0deg); }
     .concept__btn .btn__icon {
@@ -890,11 +890,11 @@ body.is-unOpening .navbar {
         transform: translateY(0%) rotate(0deg);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
       .concept__btn .btn__text::after {
-        transform: translateY(150%) rotate(12deg);
+        transform: translateY(160%) rotate(12deg);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
         @media (max-width: 1024px) {
           .concept__btn .btn__text::after {
-            transform: translateY(150%) rotate(6deg); } }
+            transform: translateY(160%) rotate(6deg); } }
     .concept__btn:hover .btn__icon {
       border: 1px solid rgba(255, 255, 255, 0);
       background: #ffffff; }
@@ -1193,20 +1193,20 @@ body.is-unOpening .concept__topImage {
           transform: translateY(0%) rotate(0deg);
           transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
         .collection__gallery .gallery__link .btn__text::after {
-          transform: translateY(150%) rotate(12deg);
+          transform: translateY(160%) rotate(12deg);
           transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
           @media (max-width: 1024px) {
             .collection__gallery .gallery__link .btn__text::after {
-              transform: translateY(150%) rotate(6deg); } }
+              transform: translateY(160%) rotate(6deg); } }
       .collection__gallery .gallery__link:hover::before {
         animation: ripple 1s cubic-bezier(0.5, 1, 0.89, 1); }
       .collection__gallery .gallery__link:hover::after {
         animation: ripple 1s 0.5s cubic-bezier(0.5, 1, 0.89, 1); }
       .collection__gallery .gallery__link:hover .btn__text::before {
-        transform: translateY(-150%) rotate(-12deg); }
+        transform: translateY(-160%) rotate(-12deg); }
         @media (max-width: 1024px) {
           .collection__gallery .gallery__link:hover .btn__text::before {
-            transform: translateY(-150%) rotate(-6deg); } }
+            transform: translateY(-160%) rotate(-6deg); } }
       .collection__gallery .gallery__link:hover .btn__text::after {
         transform: translateY(0) rotate(0deg); }
       .collection__gallery .gallery__link::before {
@@ -1278,10 +1278,10 @@ body.is-unOpening .concept__topImage {
       opacity: 1;
       transform: translate(0%, 0%) rotate(0deg); }
     .collection__btn:hover .btn__text::before {
-      transform: translateY(-150%) rotate(-12deg); }
+      transform: translateY(-160%) rotate(-12deg); }
       @media (max-width: 1024px) {
         .collection__btn:hover .btn__text::before {
-          transform: translateY(-150%) rotate(-6deg); } }
+          transform: translateY(-160%) rotate(-6deg); } }
     .collection__btn:hover .btn__text::after {
       transform: translateY(0) rotate(0deg); }
     .collection__btn .btn__icon {
@@ -1375,11 +1375,11 @@ body.is-unOpening .concept__topImage {
         transform: translateY(0%) rotate(0deg);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
       .collection__btn .btn__text::after {
-        transform: translateY(150%) rotate(12deg);
+        transform: translateY(160%) rotate(12deg);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
         @media (max-width: 1024px) {
           .collection__btn .btn__text::after {
-            transform: translateY(150%) rotate(6deg); } }
+            transform: translateY(160%) rotate(6deg); } }
     .collection__btn:hover .btn__icon {
       border: 1px solid rgba(19, 19, 19, 0);
       background: #dbbb76; }
@@ -2139,16 +2139,16 @@ body.is-unOpening .concept__topImage {
         transform: translateY(0%) rotate(0deg);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
       .footer__nav .nav__link::after {
-        transform: translateY(150%) rotate(12deg);
+        transform: translateY(160%) rotate(12deg);
         transition: all 0.6s cubic-bezier(0.33, 1, 0.68, 1); }
         @media (max-width: 1024px) {
           .footer__nav .nav__link::after {
-            transform: translateY(150%) rotate(6deg); } }
+            transform: translateY(160%) rotate(6deg); } }
       .footer__nav .nav__link:hover::before {
-        transform: translateY(-150%) rotate(-12deg); }
+        transform: translateY(-160%) rotate(-12deg); }
         @media (max-width: 1024px) {
           .footer__nav .nav__link:hover::before {
-            transform: translateY(-150%) rotate(-6deg); } }
+            transform: translateY(-160%) rotate(-6deg); } }
       .footer__nav .nav__link:hover::after {
         transform: translateY(0) rotate(0deg); }
       .footer__nav .nav__link::before {

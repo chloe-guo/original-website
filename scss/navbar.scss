@@ -137,9 +137,9 @@
         &:hover {
           .nav__icon {
             &::before {
-              transform: translateY(-150%) rotate(-12deg);
+              transform: translateY(-160%) rotate(-12deg);
               @media (max-width: $md) {
-                transform: translateY(-150%) rotate(6deg);
+                transform: translateY(-160%) rotate(6deg);
               }
             }
             &::after {
@@ -168,10 +168,10 @@
         }
         &::after {
           background: $c-primary0;
-          transform: translateY(150%) rotate(12deg);
+          transform: translateY(160%) rotate(12deg);
           transition: all 0.6s $ease-outCubic;
           @media (max-width: $md) {
-            transform: translateY(150%) rotate(6deg);
+            transform: translateY(160%) rotate(6deg);
           }
         }
       }

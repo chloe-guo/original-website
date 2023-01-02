@@ -54,9 +54,9 @@
             @include beaf(attr(data-text));
             color: $c-primary1;
             @include poa(0, 0, r, b);
-            transform: translateY(150%) rotate(12deg);
+            transform: translateY(160%) rotate(12deg);
             @media (max-width: $md) {
-              transform: translateY(150%) rotate(6deg);
+              transform: translateY(160%) rotate(6deg);
             }
           }
           @for $i from 1 through 3 {
