@@ -85,7 +85,6 @@
   &__nav {
     @include flex;
     @include font-body-2;
-    text-transform: capitalize;
     margin-left: 12rem;
     @media (max-width: $md) {
       margin-left: 0;
