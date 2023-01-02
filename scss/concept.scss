@@ -186,7 +186,8 @@
         }
       }
     }
-    &:active {
+    &:active,
+    &:focus {
       .btn {
         &__icon {
           border: 1px solid rgba($c-white, 0);

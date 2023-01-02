@@ -32,7 +32,8 @@
         }
       }
     }
-    &:active {
+    &:active,
+    &:focus {
       .btn {
         &__icon {
           background: $c-primary0;

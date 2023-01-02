@@ -94,7 +94,8 @@
         &:hover {
           background: $c-primary2;
         }
-        &:active {
+        &:active,
+        &:focus {
           background: $c-primary0;
           &::after {
             border: 1px solid $c-primary0;
@@ -137,7 +138,8 @@
         }
       }
     }
-    &:active {
+    &:active,
+    &:focus {
       .btn {
         &__icon {
           border: 1px solid rgba($c-black, 0);
