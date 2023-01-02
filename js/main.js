@@ -67,10 +67,12 @@ document.addEventListener("DOMContentLoaded", function () {
   function service_ani() {
     if (el_service.getBoundingClientRect().top < window.scrollY) {
       if (el_service.classList.contains("is-unDraw")) {
-        el_service.classList.remove("is-unDraw");
+        setTimeout(() => {
+          el_service.classList.remove("is-unDraw");
+        }, 1200);
         setTimeout(() => {
           SVGInject(document.getElementsByClassName("js-SVGInject"));
-        }, 1800);
+        }, 3000);
       }
     }
   }

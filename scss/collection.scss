@@ -83,8 +83,8 @@
     @include flex(column, flex-start, flex-end);
     @include font-button;
     color: $c-gray1;
-    transition: opacity 1.2s 0.9s $ease-inCubic,
-      transform 1.2s 0.9s $ease-outCubic !important;
+    transition: opacity 1.2s 0.6s $ease-inCubic,
+      transform 1.2s 0.6s $ease-outCubic !important;
   }
   &__btn {
     @include flex(row, flex-start, center);

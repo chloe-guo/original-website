@@ -32,7 +32,7 @@
         span {
           @include rect(100%, 9.73rem);
           overflow: hidden;
-          @media (max-width: $sm) {
+          @media (max-width: $md) {
             @include rect(100%, 4.8rem);
           }
           &::before {
