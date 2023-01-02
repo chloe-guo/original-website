@@ -4,7 +4,7 @@
   @include flex(row, space-between);
   transition: opacity 0.6s $ease-inCubic, transform 1.2s $ease-outCubic;
   @media (max-width: $md) {
-    padding: 1.6rem 1.5rem;
+    padding: 1.07rem 1.5rem;
   }
   &__brand {
     @include flex(row, flex-start, flex-start);
@@ -69,6 +69,31 @@
     }
     svg path {
       fill: transparent;
+    }
+  }
+  &__toggler {
+    display: none;
+    @include rect(3.2rem, 2.8rem, 9999px);
+    padding: 1.07rem;
+    background: $c-primary4;
+    @media (max-width: $md) {
+      @include flex(column, space-between, flex-end);
+    }
+    .toggler {
+      &__line {
+        &:nth-child(1) {
+          @include rect(1rem, 0);
+          border-top: 1px solid $c-primary0;
+        }
+        &:nth-child(2) {
+          @include rect(1rem, 0);
+          border-top: 1px solid $c-primary0;
+        }
+        &:nth-child(3) {
+          @include rect(0.67rem, 0);
+          border-top: 1px solid $c-primary0;
+        }
+      }
     }
   }
   &__collapse {

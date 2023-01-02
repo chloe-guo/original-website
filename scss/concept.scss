@@ -136,6 +136,9 @@
       @for $i from 1 through 3 {
         &:nth-child(#{$i}) {
           transform: translateY(($i - 1) * -0.87rem);
+          @media (max-width: $md) {
+            transform: translateY(($i - 1) * -0.4rem);
+          }
           &::before {
             transition: all 1.2s ($i - 1 + 16) * 0.05s $ease-outCubic;
           }

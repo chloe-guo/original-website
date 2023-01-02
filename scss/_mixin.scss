@@ -52,9 +52,9 @@
   @media (max-width: $md) {
     font-size: 4.17vw;
   }
-  @media (max-width: $xs) {
-    font-size: 15px;
-  }
+  // @media (max-width: $xs) {
+  //   font-size: 15px;
+  // }
 }
 
 @mixin font-body-2 {

@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  let swiper = new Swiper(".swiper", {
+  let swiper_concept = new Swiper(".concept__swiper", {
     init: false,
     speed: 600,
     autoplay: {
@@ -17,6 +17,25 @@ document.addEventListener("DOMContentLoaded", function () {
       },
       next: {
         translate: ["100%", 0, 0],
+      },
+    },
+  });
+
+  let swiper_service = new Swiper(".service__swiper", {
+    followFinger: true,
+    grabCursor: true,
+    observer: true,
+    enabled: true,
+    loop: true,
+    slidesPerView: "auto",
+    speed: 600,
+    autoplay: {
+      delay: 6000,
+    },
+    breakpoints: {
+      1025: {
+        enabled: false,
+        slidesPerView: 2,
       },
     },
   });
@@ -54,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
   setTimeout(() => {
     document.body.classList.remove("is-unOpening");
     setTimeout(() => {
-      swiper.init();
+      swiper_concept.init();
     }, 1200);
   }, 1200);
 

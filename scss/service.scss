@@ -15,19 +15,20 @@
     @include rect(100%, auto);
     @include flex(row, flex-start, stretch);
     margin: 3.73rem 0 0 0;
-    border-top: 1px solid $c-black-op01;
-    border-bottom: 1px solid $c-black-op01;
-    overflow: hidden;
+    overflow: visible;
     @media (max-width: $md) {
       margin: 1.6rem 0 0 0;
+      @include rect(calc(100vw - 3.2rem), auto);
     }
   }
   &__item {
     @include rect(50%, auto);
     padding: 2.67rem 2.67rem 5.73rem 2.67rem;
     flex: 0 0 50%;
+    border-top: 1px solid $c-black-op01;
+    border-bottom: 1px solid $c-black-op01;
     @media (max-width: $md) {
-      @include rect(calc(100vw - 3.2rem), auto);
+      // @include rect(calc(100vw - 3.2rem), auto);
       padding: 1.6rem;
       flex: 0 0 calc(100vw - 3.2rem);
     }
