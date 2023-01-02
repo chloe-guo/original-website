@@ -1,6 +1,10 @@
 .collection {
   margin: 29.2rem auto 0 auto;
   @include rect(80rem, auto);
+  @media (max-width: $md) {
+    margin: 8rem 1.6rem 0 1.6rem;
+    @include rect(calc(100% - 3.2rem), auto);
+  }
   &__title {
     @include section-title;
   }
@@ -8,6 +12,10 @@
     margin: auto;
     margin-top: -2.08rem;
     @include flex(row, flex-start);
+    @media (max-width: $md) {
+      margin-top: 1.6rem;
+      @include flex(column);
+    }
     .gallery {
       &__item {
         > div {
@@ -24,28 +32,49 @@
         }
         & + .gallery__item {
           margin-left: 1.6rem;
+          @media (max-width: $md) {
+            margin-left: 0;
+            margin-top: 0.6rem !important;
+          }
         }
         &:nth-child(1) {
           > div {
             @include img(18.8rem, 24.27rem);
+            @media (max-width: $md) {
+              @include img(20.8rem, 24.33rem);
+            }
           }
         }
         &:nth-child(2) {
           > div {
             @include img(32.4rem, 43.67rem);
+            @media (max-width: $md) {
+              @include img(20.8rem, 24.33rem);
+            }
           }
         }
         &:nth-child(3) {
           @include rect(25.6rem, 19.73rem);
-          > div {
-            @include img(25.6rem, 19.73rem);
-          }
           @include poa(l, 0, 0, 0);
           transform: translateY(calc(-100% - 1.6rem));
+          @media (max-width: $md) {
+            @include img(20.8rem, 24.33rem);
+            position: relative;
+            transform: translateY(0);
+          }
+          > div {
+            @include img(25.6rem, 19.73rem);
+            @media (max-width: $md) {
+              @include img(20.8rem, 24.33rem);
+            }
+          }
         }
         &:nth-child(4) {
           > div {
-            @include img(18.8rem, 21px);
+            @include img(18.8rem, 20.07rem);
+            @media (max-width: $md) {
+              @include img(20.8rem, 24.33rem);
+            }
           }
         }
       }
@@ -54,7 +83,7 @@
         background: $c-primary4;
         z-index: 1;
         @include poa(0, t, 0, 1.6rem);
-        @include ani-text-btn(1.3rem);
+        @include ani-text-btn;
         box-shadow: 0 0.27rem 2.13rem -0.53rem $c-shadow;
         &::before {
           border: 1px solid $c-primary4;
@@ -68,6 +97,8 @@
       }
       &__linkText {
         @include font-body-2;
+        text-transform: capitalize;
+        transform: translateY(10%);
         &::before {
           color: $c-gray1;
         }
@@ -85,6 +116,9 @@
     color: $c-gray1;
     transition: opacity 1.2s 0.6s $ease-inCubic,
       transform 1.2s 0.6s $ease-outCubic !important;
+    @media (max-width: $md) {
+      margin-top: 2.73rem;
+    }
   }
   &__btn {
     @include flex(row, flex-start, center);

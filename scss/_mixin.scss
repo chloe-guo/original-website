@@ -260,7 +260,7 @@
   }
 }
 
-@mixin ani-text-btn($h) {
+@mixin ani-text-btn($h: 1.3rem) {
   @include flex;
   transition: background 0.6s $ease-outCubic;
   &::before,
