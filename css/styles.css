@@ -1292,7 +1292,8 @@ body.is-unOpening .concept__topImage {
     align-items: stretch;
     margin: 3.73rem 0 0 0;
     border-top: 1px solid rgba(19, 19, 19, 0.1);
-    border-bottom: 1px solid rgba(19, 19, 19, 0.1); }
+    border-bottom: 1px solid rgba(19, 19, 19, 0.1);
+    overflow: hidden; }
     @media (max-width: 1024px) {
       .service__lists {
         margin: 1.6rem 0 0 0; } }
@@ -1440,6 +1441,10 @@ body.is-unOpening .concept__topImage {
   overflow: hidden;
   margin: 4.67rem auto 0 auto;
   padding-bottom: 13.27rem; }
+  @media (max-width: 1024px) {
+    .marquee {
+      margin: 6.67rem auto 0 auto;
+      padding-bottom: 11.8rem; } }
   .marquee__title {
     font-family: "Optima", "Inter", sans-serif;
     font-size: 1.6rem;
@@ -1473,6 +1478,9 @@ body.is-unOpening .concept__topImage {
           width: 1rem;
           height: 0;
           border-radius: 0; } }
+    @media (max-width: 1024px) {
+      .marquee__title {
+        display: none; } }
   .marquee__wrap {
     width: 100%;
     height: auto;
@@ -1484,6 +1492,9 @@ body.is-unOpening .concept__topImage {
     margin: 6.53rem 0 0 0;
     border-top: 1px solid rgba(19, 19, 19, 0.1);
     border-bottom: 1px solid rgba(19, 19, 19, 0.1); }
+    @media (max-width: 1024px) {
+      .marquee__wrap {
+        margin: 6.67rem 0 0 0; } }
   .marquee__item {
     font-family: "Optima", "Inter", sans-serif;
     font-size: 8rem;
@@ -1501,6 +1512,9 @@ body.is-unOpening .concept__topImage {
       .marquee__item {
         font-size: 5.3rem;
         line-height: 1; } }
+    @media (max-width: 1024px) {
+      .marquee__item {
+        padding: 1.07rem 0; } }
     .marquee__item + .marquee__item {
       border-top: 1px solid rgba(19, 19, 19, 0.1); }
     .marquee__item:nth-child(2n + 1) {
@@ -1521,6 +1535,9 @@ body.is-unOpening .concept__topImage {
   .marquee__text {
     white-space: nowrap;
     padding: 0 3.23rem; }
+    @media (max-width: 1024px) {
+      .marquee__text {
+        padding: 0 1.63rem; } }
     .marquee__text + .marquee__text::before {
       content: "";
       display: block;
@@ -1535,6 +1552,11 @@ body.is-unOpening .concept__topImage {
       top: 0;
       right: auto;
       bottom: 0; }
+      @media (max-width: 1024px) {
+        .marquee__text + .marquee__text::before {
+          width: 0;
+          height: 3.27rem;
+          border-radius: 0; } }
 
 .contact {
   background: #f2eee6;

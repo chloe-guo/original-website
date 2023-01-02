@@ -3,10 +3,17 @@
   overflow: hidden;
   margin: 4.67rem auto 0 auto;
   padding-bottom: 13.27rem;
+  @media (max-width: $md) {
+    margin: 6.67rem auto 0 auto;
+    padding-bottom: 11.8rem;
+  }
   &__title {
     @include section-title;
     @include rect(80rem, auto);
     margin: auto;
+    @media (max-width: $md) {
+      display: none;
+    }
   }
   &__wrap {
     @include rect(100%, auto);
@@ -14,6 +21,9 @@
     margin: 6.53rem 0 0 0;
     border-top: 1px solid $c-black-op01;
     border-bottom: 1px solid $c-black-op01;
+    @media (max-width: $md) {
+      margin: 6.67rem 0 0 0;
+    }
   }
   &__item {
     @include font-display-1;
@@ -21,6 +31,9 @@
     text-transform: capitalize;
     @include flex(row, flex-start, flex-start);
     padding: 0.53rem 0;
+    @media (max-width: $md) {
+      padding: 1.07rem 0;
+    }
     & + .marquee__item {
       border-top: 1px solid $c-black-op01;
     }
@@ -46,6 +59,9 @@
   &__text {
     white-space: nowrap;
     padding: 0 3.23rem;
+    @media (max-width: $md) {
+      padding: 0 1.63rem;
+    }
     & + .marquee__text {
       &::before {
         @include beaf;
@@ -53,6 +69,9 @@
         border-left: 1px solid $c-primary2;
         transform: translateY(-12%) rotate(20deg);
         @include poa(0, 0, r, 0);
+        @media (max-width: $md) {
+          @include rect(0, 3.27rem);
+        }
       }
     }
   }
