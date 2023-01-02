@@ -32,6 +32,10 @@ html {
 
   body {
     overflow-x: hidden;
+    &.has-popup {
+      @include rect(100vw, 100vh);
+      overflow: hidden;
+    }
   }
 
   ol,

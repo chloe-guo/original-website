@@ -1,0 +1,30 @@
+.loading {
+  @include rect(100vw, 100vh);
+  @include fixed(0, 0, r, b);
+  background: $c-primary1;
+  z-index: 20;
+  @include flex(column);
+  filter: blur(4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.6s 0.6s cubic-bezier(0.55, 0, 1, 0.45),
+    filter 0.6s 0.6s cubic-bezier(0, 0.55, 0.45, 1);
+  &__text {
+    @include font-button;
+    color: $c-white;
+    margin-bottom: 1.6rem;
+  }
+  &__process {
+    @include rect(9.33rem, 1px);
+    background: $c-white-op03;
+  }
+  &__line {
+    @include rect(0%, 100%);
+    background: $c-white;
+  }
+  &.is-popup {
+    filter: blur(0px);
+    opacity: 1;
+    pointer-events: auto;
+  }
+}

@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", function () {
   SVGInject.setOptions({
     afterInject: function (img, svg) {
       svg.style.opacity = 1;
+      opening();
       if (svg.classList.contains("js-SVGInject")) {
         setTimeout(() => {
           const el_path = document.getElementsByClassName("is-bgLine");
@@ -56,26 +57,54 @@ document.addEventListener("DOMContentLoaded", function () {
           duration: "3600",
           easing: "cubic-bezier(0.11, 0, 0.5, 0)",
         });
-        SVGDraw.draw(function () {
-          svg.classList.add("is-drawFinish");
-        });
       }
     },
   });
 
-  AOS.init({
-    duration: 1200,
-    easing: "ease-in-out-sine",
-    anchorPlacement: "top-bottom",
-    once: true,
-  });
+  imageLoading();
 
-  setTimeout(() => {
-    document.body.classList.remove("is-unOpening");
+  function imageLoading() {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+    document.body.classList.add("has-popup");
+    let imgN = 0;
+    const imgID = document.querySelectorAll("img");
+    const line = document.getElementsByClassName("js-loadingLine")[0];
+    imgID.forEach((item) => {
+      const img = new Image();
+      img.src = item.src;
+      img.addEventListener("load", () => {
+        imgN++;
+        line.style.width = (imgN / imgID.length) * 100 + "%";
+        if (imgN == imgID.length) {
+          SVGInject(document.getElementsByClassName("js-SVGInject"));
+        }
+      });
+    });
+  }
+
+  function opening() {
+    document.body.classList.remove("has-popup");
+    document
+      .getElementsByClassName("js-loading")[0]
+      .classList.remove("is-popup");
     setTimeout(() => {
-      swiper_concept.init();
-    }, 1200);
-  }, 1200);
+      AOS.init({
+        duration: 1200,
+        easing: "ease-in-out-sine",
+        anchorPlacement: "top-bottom",
+        once: true,
+      });
+      setTimeout(() => {
+        document.body.classList.remove("is-unOpening");
+        setTimeout(() => {
+          swiper_concept.init();
+        }, 1200);
+      }, 1200);
+    }, 1800);
+  }
 
   const el_service = document.getElementById("service");
   service_ani();
@@ -90,7 +119,9 @@ document.addEventListener("DOMContentLoaded", function () {
           el_service.classList.remove("is-unDraw");
         }, 1200);
         setTimeout(() => {
-          SVGInject(document.getElementsByClassName("js-SVGInject"));
+          SVGDraw.draw(function () {
+            svg.classList.add("is-drawFinish");
+          });
         }, 3000);
       }
     }
