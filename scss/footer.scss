@@ -1,6 +1,10 @@
 .footer {
   padding: 8rem 8rem 3.33rem 8rem;
   @include flex(row, space-between, flex-end);
+  @media (max-width: $md) {
+    padding: 2.27rem 1.6rem 3.73rem 1.6rem;
+    @include flex(column, flex-start, flex-start);
+  }
   &__brand {
     @include flex(row, flex-start, flex-start);
     &:hover {
@@ -37,6 +41,9 @@
       }
       &__original {
         @include rect(7.13rem, 2.12rem);
+        @media (max-width: $md) {
+          @include rect(5.46rem, 1.63rem);
+        }
         &::before,
         &::after {
           -webkit-mask: url("../images/original.svg");
@@ -47,6 +54,10 @@
       &__registered {
         @include rect(0.8rem, 0.8rem);
         margin-left: 0.47rem;
+        @media (max-width: $md) {
+          @include rect(0.53rem, 0.53rem);
+          margin-left: 0.47rem;
+        }
         &::before,
         &::after {
           -webkit-mask: url("../images/registered.svg");
@@ -61,22 +72,33 @@
   }
   &__links {
     @include flex(row, flex-start, flex-end);
+    @media (max-width: $md) {
+      @include flex(column, flex-start, flex-start);
+    }
   }
   &__nav {
     @include flex;
     @include font-body-2;
     text-transform: capitalize;
     margin-left: 12rem;
+    @media (max-width: $md) {
+      margin-left: 0;
+      margin-top: 1.6rem;
+      margin-bottom: 4.8rem;
+    }
     .nav {
       &__item {
         & + .nav__item {
           margin: 0 2rem;
           &::before {
             @include beaf;
-            @include rect(0, 16px);
+            @include rect(0, 1.07rem);
             border-left: 1px solid $c-black-op03;
             transform: translateY(-15%) rotateZ(20deg);
             @include poa(-1rem, 0, r, 0);
+            @media (max-width: $md) {
+              @include rect(0, 1.07rem);
+            }
           }
         }
       }
