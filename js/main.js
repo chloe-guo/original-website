@@ -26,7 +26,7 @@ function init3D() {
   scene.add(ambient);
   const loader = new THREE.GLTFLoader();
   loader.load(
-    "../images/ring.glb",
+    "https://ik.imagekit.io/chloefzguo/ring.glb?ik-sdk-version=javascript-1.4.3&updatedAt=1672670598176",
     function (gltf) {
       ring = gltf.scene;
       const box = new THREE.Box3().setFromObject(ring);

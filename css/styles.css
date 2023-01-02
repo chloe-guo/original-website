@@ -2,12 +2,12 @@
   font-family: "Optima";
   font-style: normal;
   font-weight: 400;
-  src: local("Optima"), url("../fonts/OptimaLTPro-Medium.otf") format("opentype"); }
+  src: local("Optima"), url("https://ik.imagekit.io/chloefzguo/OptimaLTPro-Medium.otf?ik-sdk-version=javascript-1.4.3&updatedAt=1672670639784") format("opentype"); }
 @font-face {
   font-family: "Optima";
   font-style: normal;
   font-weight: bold;
-  src: local("Optima"), url("../fonts/OptimaLTPro-bold.otf") format("opentype"); }
+  src: local("Optima"), url("https://ik.imagekit.io/chloefzguo/OptimaLTPro-Bold.otf?ik-sdk-version=javascript-1.4.3&updatedAt=1672670639943") format("opentype"); }
 @keyframes ripple {
   0% {
     width: 100%;
