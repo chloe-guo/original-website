@@ -116,7 +116,7 @@ function opening() {
 let SVGDraw = null;
 const el_service = document.getElementById("service");
 function service_ani() {
-  if (el_service.getBoundingClientRect().top < window.scrollY) {
+  if (el_service.getBoundingClientRect().top < window.innerHeight) {
     if (el_service.classList.contains("is-unDraw")) {
       setTimeout(() => {
         el_service.classList.remove("is-unDraw");
