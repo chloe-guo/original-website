@@ -90,7 +90,7 @@
           @for $i from 1 through 2 {
             &:nth-child(#{$i}) {
               &::before {
-                transition: all 0.6s ($i - 1 + 36) * 0.05s $ease-outCubic;
+                transition: all 0.6s ($i - 1 + 24) * 0.05s $ease-outCubic;
               }
             }
           }
@@ -100,8 +100,8 @@
         @include font-body-1;
         color: $c-gray1;
         margin-top: 1.06rem;
-        transition: opacity 1.2s 1.8s $ease-inCubic,
-          transform 1.2s 1.8s $ease-outCubic;
+        transition: opacity 1.2s 1.2s $ease-inCubic,
+          transform 1.2s 1.2s $ease-outCubic;
         @media (max-width: $md) {
           margin-top: 1.06rem;
         }

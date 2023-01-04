@@ -130,7 +130,7 @@ function service_ani() {
             svg.classList.add("is-drawFinish")
           );
         });
-      }, 3000);
+      }, 2400);
     }
   }
 }
